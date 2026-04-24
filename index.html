@@ -644,92 +644,81 @@
   }
   .char-counter.ok { color: #86efac; opacity: 1; }
 
-  /* ===== Deadline banner in hero ===== */
-  .deadline-banner {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.85rem;
-    background: rgba(251, 191, 36, 0.95);
-    color: #422006;
-    padding: 0.7rem 1.1rem 0.7rem 0.85rem;
-    border-radius: 10px;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-    font-size: 0.92rem;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-    border: 1px solid rgba(251,191,36,0.5);
-    max-width: 620px;
-    flex-wrap: wrap;
-  }
-  .deadline-banner .dl-icon {
-    font-size: 1.4rem;
-    line-height: 1;
-  }
-  .deadline-banner .dl-main {
+  /* ===== Countdown card in hero ===== */
+  .countdown-card {
     display: flex;
     flex-direction: column;
-    line-height: 1.2;
+    gap: 0.6rem;
+    background: rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 1.75rem;
+    max-width: 560px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
-  .deadline-banner .dl-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.8;
+  .countdown-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
     font-weight: 700;
-  }
-  .deadline-banner .dl-date {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #422006;
-  }
-  .deadline-banner .dl-countdown {
-    background: #b91c1c;
-    color: white;
-    padding: 0.45rem 0.9rem;
-    border-radius: 8px;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    white-space: nowrap;
-    display: inline-flex;
+    color: #fbbf24;
+  }
+  .countdown-header .cd-bullet {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: pulse-bullet 1.5s infinite;
+  }
+  @keyframes pulse-bullet {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+  .countdown-header .cd-date {
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+  .countdown-cell {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.15;
+    justify-content: center;
+    padding: 0.65rem 0.4rem 0.55rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
   }
-  .deadline-banner .dl-countdown .count-row {
-    display: inline-flex;
-    gap: 0.35rem;
-    font-variant-numeric: tabular-nums;
-    margin-bottom: 2px;
-  }
-  .deadline-banner .dl-countdown .count-box {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 2.2em;
-  }
-  .deadline-banner .dl-countdown .count-num {
-    font-size: 1.2rem;
-    font-weight: 900;
+  .countdown-cell .cd-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 6vw, 2.9rem);
+    font-weight: 800;
     line-height: 1;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
   }
-  .deadline-banner .dl-countdown .count-unit {
-    font-size: 0.6rem;
-    opacity: 0.9;
-    letter-spacing: 0.08em;
+  .countdown-cell .cd-unit {
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
   }
-  .deadline-banner .dl-countdown .count-sep {
-    font-size: 1.2rem;
-    font-weight: 900;
-    opacity: 0.6;
-    padding: 0 0.1em;
-  }
-  .deadline-banner .dl-countdown .count-label {
-    font-size: 0.65rem;
-    opacity: 0.85;
-    letter-spacing: 0.08em;
+  .countdown-cell#cd-secs-cell .cd-num {
+    color: #fbbf24;
   }
 
   /* ===== Share section ===== */
@@ -936,24 +925,18 @@
       Enter your address and we'll find your legislators automatically.
     </p>
 
-    <div class="deadline-banner" role="alert" aria-live="polite">
-      <span class="dl-icon" aria-hidden="true">&#9201;</span>
-      <span class="dl-main">
-        <span class="dl-label">Assembly floor deadline</span>
-        <span class="dl-date">May 30, 2026</span>
-      </span>
-      <span class="dl-countdown">
-        <span class="count-row">
-          <span class="count-box"><span class="count-num" id="cd-days">&mdash;</span><span class="count-unit">days</span></span>
-          <span class="count-sep">:</span>
-          <span class="count-box"><span class="count-num" id="cd-hours">&mdash;</span><span class="count-unit">hrs</span></span>
-          <span class="count-sep">:</span>
-          <span class="count-box"><span class="count-num" id="cd-mins">&mdash;</span><span class="count-unit">min</span></span>
-          <span class="count-sep">:</span>
-          <span class="count-box"><span class="count-num" id="cd-secs">&mdash;</span><span class="count-unit">sec</span></span>
-        </span>
-        <span class="count-label">left to act</span>
-      </span>
+    <div class="countdown-card" role="timer" aria-live="polite" aria-label="Time remaining until the Assembly floor vote deadline">
+      <div class="countdown-header">
+        <span class="cd-bullet" aria-hidden="true"></span>
+        Assembly Floor Deadline
+        <span class="cd-date">&mdash; Sat, May 30, 2026</span>
+      </div>
+      <div class="countdown-grid">
+        <div class="countdown-cell"><span class="cd-num" id="cd-days">&mdash;</span><span class="cd-unit">Days</span></div>
+        <div class="countdown-cell"><span class="cd-num" id="cd-hours">&mdash;</span><span class="cd-unit">Hours</span></div>
+        <div class="countdown-cell"><span class="cd-num" id="cd-mins">&mdash;</span><span class="cd-unit">Minutes</span></div>
+        <div class="countdown-cell" id="cd-secs-cell"><span class="cd-num" id="cd-secs">&mdash;</span><span class="cd-unit">Seconds</span></div>
+      </div>
     </div>
 
     <div class="cta-row">
@@ -1575,7 +1558,7 @@ Examples:
 
   function renderRepCards() {
     if (!lookedUpReps) {
-      repCards.innerHTML = '<p style="opacity: 0.7; font-size: 0.95rem;">Enter your address above and click <em>Find My Legislators</em>.</p>';
+      repCards.innerHTML = '<p style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">Enter your address above and click <em style="color:#fbbf24;font-style:normal;font-weight:600;">Find My Legislators</em>.</p>';
       return;
     }
 
