@@ -378,9 +378,11 @@
     border-radius: 50%;
     font-weight: 800;
     font-size: 1.35rem;
-    line-height: 1;
+    line-height: 44px;
+    text-align: center;
     flex-shrink: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-variant-numeric: lining-nums tabular-nums;
   }
   .step-head h3 { margin-bottom: 0; }
   .step-desc { color: rgba(255,255,255,0.95); margin-bottom: 1.25rem; font-size: 0.95rem; margin-left: 48px; }
@@ -449,8 +451,105 @@
   .rep-card .info { flex: 1; min-width: 0; }
   .rep-card .role { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.15rem; }
   .rep-card .name { font-weight: 600; font-size: 1.05rem; color: white; margin-bottom: 0.15rem; }
-  .rep-card .email { font-size: 0.9rem; opacity: 0.8; word-break: break-all; }
+  .rep-card .email { font-size: 0.9rem; color: rgba(255,255,255,0.8); word-break: break-all; }
   .rep-card .email .edit-link { color: #fbbf24; cursor: pointer; text-decoration: underline; margin-left: 0.4rem; font-size: 0.8rem; }
+
+  /* ===== Call CTA section (shown after rep lookup) ===== */
+  .call-cta {
+    background: linear-gradient(135deg, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0.05) 100%);
+    border: 1.5px solid rgba(134,239,172,0.4);
+    border-radius: 14px;
+    padding: 1.25rem 1.4rem;
+    margin-top: 1.5rem;
+    display: none;
+  }
+  .call-cta.show { display: block; }
+  .call-cta .cta-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+  .call-cta .cta-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .call-cta .cta-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #86efac;
+  }
+  .call-cta .cta-desc {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 0.9rem;
+    line-height: 1.5;
+  }
+  .call-cta .cta-desc strong {
+    color: #86efac;
+  }
+  .call-btns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+  @media (min-width: 560px) {
+    .call-btns { grid-template-columns: 1fr 1fr; }
+  }
+  .call-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.15rem;
+    background: #15803d;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: inherit;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    box-shadow: 0 2px 10px rgba(22,163,74,0.25);
+  }
+  .call-btn:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 4px 14px rgba(22,163,74,0.4);
+  }
+  .call-btn-icon {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .call-btn-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    min-width: 0;
+    flex: 1;
+  }
+  .call-btn-who {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .call-btn-name {
+    font-weight: 700;
+    font-size: 0.98rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .call-btn-num {
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.95;
+  }
 
   .lookup-status {
     padding: 0.8rem 1rem;
@@ -744,8 +843,10 @@
     border-radius: 50%;
     font-weight: 800;
     font-size: 1.35rem;
-    line-height: 1;
-    font-family: 'Playfair Display', serif;
+    line-height: 44px;
+    text-align: center;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-variant-numeric: lining-nums tabular-nums;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   }
   .share-step-label {
@@ -758,66 +859,69 @@
   .share-section h2 {
     color: white;
     margin-bottom: 0.5rem;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
   }
   .share-section .share-lead {
     color: rgba(255,255,255,0.95);
     font-size: 1.1rem;
     max-width: 640px;
-    margin: 0 auto 1.5rem;
-  }
-  .share-section .share-stat {
-    display: inline-block;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 0.55rem 1.15rem;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.92rem;
-    margin-bottom: 2rem;
-    color: #fbbf24;
+    margin: 0 auto 2rem;
   }
   .share-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 0.75rem;
-    max-width: 820px;
+    max-width: 760px;
     margin: 0 auto;
   }
   .share-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem 1.1rem;
-    border-radius: 10px;
+    gap: 0.6rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 12px;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-decoration: none;
     color: white;
-    background: rgba(255,255,255,0.12);
-    border: 1.5px solid rgba(255,255,255,0.25);
-    transition: background 0.15s, transform 0.15s;
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.22);
+    transition: background 0.15s, transform 0.15s, border-color 0.15s;
     cursor: pointer;
     font-family: inherit;
   }
   .share-btn:hover {
-    background: rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.35);
     transform: translateY(-2px);
     color: white;
   }
-  .share-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
-  .share-btn.native {
+  .share-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .share-btn.primary {
     background: #fbbf24;
     color: #422006;
     border-color: #fbbf24;
     grid-column: 1 / -1;
-    font-size: 1.05rem;
-    padding: 1.1rem;
+    font-size: 1.15rem;
+    padding: 1.25rem;
+    font-weight: 800;
   }
-  .share-btn.native:hover { background: #fcd34d; color: #422006; }
+  .share-btn.primary:hover {
+    background: #fcd34d;
+    border-color: #fcd34d;
+    color: #422006;
+  }
+  .share-btn.primary svg { width: 26px; height: 26px; }
   .share-btn.copied-flash {
-    background: var(--success);
-    border-color: var(--success);
+    background: var(--success) !important;
+    border-color: var(--success) !important;
+    color: white !important;
+  }
+  .share-footer-note {
+    margin-top: 1.75rem;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.75);
   }
 
   .polish-row {
@@ -922,7 +1026,8 @@
     <h1>Vote NO on AB&nbsp;2017</h1>
     <p class="lead">
       California's AB 2017 would declare two Islamic holidays as official state holidays.
-      Enter your address and we'll find your legislators automatically.
+      Enter your address &mdash; we'll find your Assembly Member and State Senator
+      automatically, then help you generate a personalized opposition email in under 2 minutes.
     </p>
 
     <div class="countdown-card" role="timer" aria-live="polite" aria-label="Time remaining until the Assembly floor vote deadline">
@@ -1041,6 +1146,17 @@
 
         <div id="rep-cards"></div>
 
+        <div class="call-cta" id="call-cta">
+          <div class="cta-head">
+            <span class="cta-icon" aria-hidden="true">&#9742;</span>
+            <span class="cta-title">A 60-second call is 3&ndash;5&times; more powerful than an email</span>
+          </div>
+          <p class="cta-desc">
+            District offices log every call by constituent name. One minute on the phone genuinely moves the needle more than any email. Call <strong>BEFORE</strong> sending the email below if you can &mdash; it's the single highest-impact action.
+          </p>
+          <div class="call-btns" id="call-btns"></div>
+        </div>
+
         <div class="field" style="display: none;" id="manual-override">
           <label>Not right? You can edit the emails above by clicking "edit".</label>
         </div>
@@ -1119,19 +1235,16 @@ Examples:
       <span class="share-step-num">5</span>
       <span class="share-step-label">Final Step</span>
     </div>
-    <h2>Share This &mdash; Every Voice Matters</h2>
+    <h2>Share With a Friend</h2>
     <p class="share-lead">
-      Emailing your reps is powerful. <strong>Getting 10 friends to do the same is 10&times; more powerful.</strong>
-      Please share with every California friend, family member, and neighbor you know.
+      Your email reaches 3 legislators. <strong>A friend's email reaches 3 more.</strong>
+      Take 10 seconds to pass this along &mdash; that's how grassroots movements actually work.
     </p>
-    <div class="share-stat" id="share-countdown">
-      &#9201; <span id="days-left-share">&mdash;</span> days left until the May 30 floor deadline
-    </div>
 
     <div class="share-grid">
-      <button class="share-btn native" data-share="native" type="button">
+      <button class="share-btn primary" data-share="native" type="button">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
-        Share&hellip;
+        Share This Tool
       </button>
 
       <a class="share-btn" data-share="sms" href="#" target="_blank" rel="noopener">
@@ -1144,6 +1257,11 @@ Examples:
         WhatsApp
       </a>
 
+      <a class="share-btn" data-share="email" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email
+      </a>
+
       <a class="share-btn" data-share="twitter" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         X / Twitter
@@ -1154,26 +1272,15 @@ Examples:
         Facebook
       </a>
 
-      <a class="share-btn" data-share="email" href="#">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        Email
-      </a>
-
-      <a class="share-btn" data-share="linkedin" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-
-      <a class="share-btn" data-share="reddit" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 014.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 01.14-.197.35.35 0 01.238-.042l2.906.617a1.214 1.214 0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 00-.231.094.33.33 0 000 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 00.029-.463.33.33 0 00-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 00-.232-.095z"/></svg>
-        Reddit
-      </a>
-
       <button class="share-btn" data-share="copy" type="button">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
         Copy Link
       </button>
     </div>
+
+    <p class="share-footer-note">
+      &#9201; <span id="days-left-share">&mdash;</span> days left until the May 30 Assembly floor deadline
+    </p>
   </div>
 </section>
 
@@ -1214,6 +1321,8 @@ Examples:
       <span class="counter-stat">Visits <strong id="counter-visits">&mdash;</strong></span>
       <span class="counter-divider">&middot;</span>
       <span class="counter-stat">Emails prepared <strong id="counter-emails">&mdash;</strong></span>
+      <span class="counter-divider">&middot;</span>
+      <span class="counter-stat">Calls placed <strong id="counter-calls">&mdash;</strong></span>
     </div>
     <p>This page is a grassroots civic tool. Not affiliated with any campaign, PAC, or official government body.</p>
     <p>Always verify contact details at findyourrep.legislature.ca.gov before sending.</p>
@@ -1379,6 +1488,16 @@ Examples:
     const last = clean.split(/\s+/).pop().toLowerCase();
     return `senator.${last}@senate.ca.gov`;
   }
+
+  // ============================================================
+  // CAPITOL OFFICE PHONE NUMBERS — follow a strict district-based pattern
+  //   Assembly: (916) 319-2XXX  where XXX = zero-padded district number
+  //   Senate:   (916) 651-4XXX  where XXX = zero-padded district number
+  // Example: AD 17 (Haney) -> 319-2017 / SD 11 (Wiener) -> 651-4011
+  // ============================================================
+  function asmPhone(d) { return `(916) 319-2${String(d).padStart(3, '0')}`; }
+  function senPhone(d) { return `(916) 651-4${String(d).padStart(3, '0')}`; }
+  function telUrl(pretty) { return 'tel:+1' + pretty.replace(/\D/g, ''); }
 
   // ============================================================
   // DOM REFERENCES
@@ -1610,8 +1729,44 @@ Examples:
         });
       }
     });
+
+    // Populate call CTA with tel: links to district capitol offices
+    renderCallCta();
   }
   renderRepCards();
+
+  function renderCallCta() {
+    const cta = el('call-cta');
+    const btns = el('call-btns');
+    if (!cta || !btns) return;
+    if (!lookedUpReps) {
+      cta.classList.remove('show');
+      btns.innerHTML = '';
+      return;
+    }
+    const { assembly, senate } = lookedUpReps;
+    const asmPh = asmPhone(assembly.d);
+    const senPh = senPhone(senate.d);
+    const items = [
+      { who: `Assembly Member AD ${assembly.d}`, name: assembly.name, phone: asmPh, chamber: 'assembly' },
+      { who: `State Senator SD ${senate.d}`, name: senate.name, phone: senPh, chamber: 'senate' }
+    ];
+    btns.innerHTML = items.map(it => `
+      <a class="call-btn" href="${telUrl(it.phone)}" data-call-chamber="${it.chamber}">
+        <div class="call-btn-icon">&#9742;</div>
+        <div class="call-btn-info">
+          <span class="call-btn-who">${it.who}</span>
+          <span class="call-btn-name">${it.name}</span>
+          <span class="call-btn-num">${it.phone}</span>
+        </div>
+      </a>
+    `).join('');
+    cta.classList.add('show');
+
+    btns.querySelectorAll('.call-btn').forEach(a => {
+      a.addEventListener('click', () => { bumpCallsCounter(); });
+    });
+  }
 
   // ============================================================
   // EMAIL BUILDING & PREVIEW
@@ -1928,8 +2083,9 @@ Return ONLY the polished paragraph, nothing else \u2014 no preamble, no quotatio
   // HIT COUNTERS — abacus.jasoncameron.dev (free, no key, no cookies)
   // /hit   -> increments and returns new value
   // /get   -> reads without incrementing
+  // Using v2 namespace to start all counters fresh at 0.
   // ============================================================
-  const COUNTER_NS = 'voteno-ab2017';
+  const COUNTER_NS = 'voteno-ab2017-v2';
 
   function formatNum(n) {
     return typeof n === 'number' ? n.toLocaleString('en-US') : '—';
@@ -1946,30 +2102,29 @@ Return ONLY the polished paragraph, nothing else \u2014 no preamble, no quotatio
     return (await r.json()).value;
   }
 
-  async function loadVisitsCounter() {
-    const node = document.getElementById('counter-visits');
+  async function loadCounter(key, nodeId, incrementOnLoad) {
+    const node = document.getElementById(nodeId);
+    if (!node) return;
     try {
-      const value = await hit('visits');
+      const value = incrementOnLoad ? await hit(key) : await readCount(key);
       node.textContent = formatNum(value);
-    } catch (_) { node.textContent = '—'; }
+    } catch (_) { node.textContent = '0'; }
   }
-  async function loadEmailsCounter() {
-    const node = document.getElementById('counter-emails');
+  async function bumpCounter(key, nodeId) {
+    const node = document.getElementById(nodeId);
     try {
-      const value = await readCount('emails');
-      node.textContent = formatNum(value);
-    } catch (_) { node.textContent = '—'; }
-  }
-  async function bumpEmailsCounter() {
-    const node = document.getElementById('counter-emails');
-    try {
-      const value = await hit('emails');
-      node.textContent = formatNum(value);
+      const value = await hit(key);
+      if (node) node.textContent = formatNum(value);
     } catch (_) { /* non-blocking */ }
   }
 
-  loadVisitsCounter();
-  loadEmailsCounter();
+  async function bumpEmailsCounter() { return bumpCounter('emails', 'counter-emails'); }
+  async function bumpCallsCounter()  { return bumpCounter('calls',  'counter-calls'); }
+
+  // Page load: increment visits once, read current values for emails + calls.
+  loadCounter('visits', 'counter-visits', true);
+  loadCounter('emails', 'counter-emails', false);
+  loadCounter('calls',  'counter-calls',  false);
 
   // ============================================================
   // COUNTDOWN — Assembly floor deadline (May 30, 2026 end-of-day Pacific)
