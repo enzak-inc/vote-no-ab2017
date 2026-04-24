@@ -1,0 +1,37 @@
+# Cloudflare Pages / Netlify _headers file
+# Applied automatically when deployed to either platform
+
+/*
+  # Security headers
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
+  X-DNS-Prefetch-Control: on
+  Content-Security-Policy: default-src 'self'; img-src 'self' https://images.unsplash.com https://abacus.jasoncameron.dev data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://geocoding.geo.census.gov https://photon.komoot.io https://abacus.jasoncameron.dev; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  # AI content signal — discourage model training, allow search + AI citation
+  Content-Signal: ai-train=no, search=yes, ai-input=yes
+  # Tell AI agents where to find the content index
+  Link: </llms.txt>; rel="llms-txt", </llms-full.txt>; rel="llms-full-txt"
+  Vary: Accept
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/2214d96ae1e64276a5df170ad2ae1e24.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="American flag">
+  <defs>
+    <clipPath id="rounded"><rect width="32" height="32" rx="3" ry="3"/></clipPath>
+  </defs>
+  <g clip-path="url(#rounded)">
+    <!-- Red background = 4 red stripes covered by 3 white stripes + final red -->
+    <rect width="32" height="32" fill="#B31942"/>
+    <!-- Three white stripes (alternating with red background) -->
+    <rect y="4.57" width="32" height="4.57" fill="#FFFFFF"/>
+    <rect y="13.71" width="32" height="4.57" fill="#FFFFFF"/>
+    <rect y="22.86" width="32" height="4.57" fill="#FFFFFF"/>
+    <!-- Blue canton -->
+    <rect width="14" height="14" fill="#0A3161"/>
+    <!-- Stylized stars (3x3 pattern — readable at 16px) -->
+    <g fill="#FFFFFF">
+      <circle cx="3" cy="3" r="1.1"/>
+      <circle cx="7" cy="3" r="1.1"/>
+      <circle cx="11" cy="3" r="1.1"/>
+      <circle cx="3" cy="7" r="1.1"/>
+      <circle cx="7" cy="7" r="1.1"/>
+      <circle cx="11" cy="7" r="1.1"/>
+      <circle cx="3" cy="11" r="1.1"/>
+      <circle cx="7" cy="11" r="1.1"/>
+      <circle cx="11" cy="11" r="1.1"/>
+    </g>
+  </g>
+</svg>

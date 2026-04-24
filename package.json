@@ -1,0 +1,12 @@
+{
+  "name": "vote-no-ab2017",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Grassroots civic tool to contact California legislators about AB 2017.",
+  "type": "module",
+  "scripts": {
+    "indexnow": "node scripts/ping-indexnow.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "license": "CC0-1.0"
+}

@@ -1,0 +1,3 @@
+# Cloudflare Pages / Netlify redirects
+# www -> apex (path-preserving 301)
+https://www.vote-no-ab2017.com/*  https://vote-no-ab2017.com/:splat  301!

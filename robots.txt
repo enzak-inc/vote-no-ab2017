@@ -1,0 +1,74 @@
+# robots.txt — Vote NO on AB 2017
+# Last updated: 2026-04-23
+
+# Default: allow everything
+User-agent: *
+Allow: /
+
+# ==========================================================
+# AI search crawlers — ALLOW (so we show up in citations)
+# ==========================================================
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ==========================================================
+# AI training crawlers — DISALLOW (we don't consent to training)
+# ==========================================================
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+# ==========================================================
+# Sitemap + llms.txt for AI agents
+# ==========================================================
+Sitemap: https://vote-no-ab2017.com/sitemap.xml
