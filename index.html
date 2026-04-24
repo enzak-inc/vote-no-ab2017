@@ -1089,11 +1089,14 @@
     .countdown-cell .cd-num { font-size: 1.85rem; }
     .countdown-cell .cd-unit { font-size: 0.58rem; margin-top: 0.3rem; letter-spacing: 0.1em; }
 
-    /* Form wrap — less padding on mobile */
+    /* Form wrap — extend edge-to-edge on mobile so inputs have more width.
+       Negative horizontal margin cancels the parent .container's 1.6rem padding. */
     .form-wrap {
       padding: 1.5rem 1.25rem;
-      border-radius: 14px;
+      border-radius: 0;
       margin-top: 1.5rem;
+      margin-left: -1.6rem;
+      margin-right: -1.6rem;
     }
     .step-block { padding-top: 1.3rem; margin-top: 1.3rem; }
     .step-desc {
@@ -1190,6 +1193,8 @@
     .field-row.three .field:nth-child(1) { grid-column: auto; }
     .cta-row { flex-direction: column; }
     .cta-row .btn { width: 100%; }
+    /* match the tighter container padding */
+    .form-wrap { margin-left: -1.15rem; margin-right: -1.15rem; }
   }
 </style>
 </head>
