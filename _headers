@@ -9,7 +9,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
   X-DNS-Prefetch-Control: on
-  Content-Security-Policy: default-src 'self'; img-src 'self' https://images.unsplash.com https://abacus.jasoncameron.dev data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://geocoding.geo.census.gov https://photon.komoot.io https://abacus.jasoncameron.dev; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; img-src 'self' https://images.unsplash.com data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://geocoding.geo.census.gov; connect-src 'self' https://geocoding.geo.census.gov https://photon.komoot.io https://abacus.jasoncameron.dev; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   # AI content signal — discourage model training, allow search + AI citation
   Content-Signal: ai-train=no, search=yes, ai-input=yes
   # Tell AI agents where to find the content index
