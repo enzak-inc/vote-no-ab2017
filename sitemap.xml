@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vote-no-ab2017.com/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://vote-no-ab2017.com/img/california-state-capitol-ab-2017-civic-action.jpg</image:loc>
-      <image:title>Vote NO on AB 2017 — Contact Your California Legislators</image:title>
-      <image:caption>California State Capitol at golden hour with American and California flags</image:caption>
-    </image:image>
   </url>
 </urlset>
