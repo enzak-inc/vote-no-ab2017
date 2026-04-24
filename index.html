@@ -881,10 +881,13 @@
   }
   .share-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.75rem;
-    max-width: 760px;
+    max-width: 880px;
     margin: 0 auto;
+  }
+  @media (max-width: 640px) {
+    .share-grid { grid-template-columns: repeat(2, 1fr); }
   }
   .share-btn {
     display: inline-flex;
@@ -1072,14 +1075,15 @@
       <div>
         <h2>About AB 2017</h2>
         <p>
-          <strong>AB 2017</strong>, introduced by Assemblymember Matt Haney (D-San Francisco) in March 2026, would formally recognize
+          <strong>AB 2017</strong>, introduced by Assemblymember Matt Haney (D-San Francisco) on February 17, 2026, would formally recognize
           <em>Eid al-Fitr</em> and <em>Eid al-Adha</em> as state-recognized holidays in California statute.
           The bill would guarantee excused absences for students, allow workers to use existing paid leave for observance, and authorize
           community colleges and public schools to close on those days.
         </p>
         <p style="margin-top: 1rem;">
-          The bill is sponsored by the Muslim Impact Council, CAIR-CA, and the California Commission on Asian and Pacific Islander American Affairs.
-          As of April 2026, it passed committee and is moving to the full Assembly floor.
+          The bill is sponsored by the Muslim Impact Council, CAIR-CA, and the California Commission on Asian and Pacific Islander American Affairs (CAPIAA).
+          As of late April 2026 it has cleared two Assembly committees (Governmental Organization, Public Employment &amp; Retirement) unanimously and is
+          now awaiting an <strong>Assembly Appropriations Committee</strong> hearing. The final Assembly floor vote must happen by <strong>May 30, 2026</strong>.
         </p>
         <p style="margin-top: 1rem;">
           Concerns from opponents center on California's traditional neutrality toward specific religious holidays, equal-treatment questions
@@ -1094,7 +1098,7 @@
             <dt>Session</dt><dd>2025&ndash;2026 Regular</dd>
             <dt>Author</dt><dd>Matt Haney (D&nbsp;&mdash;&nbsp;AD&nbsp;17, SF)</dd>
             <dt>Title</dt><dd>State holidays: Eid.</dd>
-            <dt>Status</dt><dd><span class="status-pill">Passed committee &mdash; on to Assembly floor</span></dd>
+            <dt>Status</dt><dd><span class="status-pill">In Assembly Appropriations &mdash; floor vote by May 30</span></dd>
           </dl>
         </div>
       </div>
@@ -1287,6 +1291,16 @@ Examples:
         Facebook
       </a>
 
+      <a class="share-btn" data-share="linkedin" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a class="share-btn" data-share="reddit" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 014.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 01.14-.197.35.35 0 01.238-.042l2.906.617a1.214 1.214 0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 00-.231.094.33.33 0 000 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 00.029-.463.33.33 0 00-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 00-.232-.095z"/></svg>
+        Reddit
+      </a>
+
       <button class="share-btn" data-share="copy" type="button">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
         Copy Link
@@ -1328,7 +1342,7 @@ Examples:
     <div class="privacy-block">
       <h3>Privacy &amp; Purpose</h3>
       <p><strong>No data is collected, stored, or shared by this site.</strong> Everything you type stays in your browser. There are no cookies, no analytics, no tracking pixels, no servers recording your inputs. When you click <em>Open in Mail App</em>, your device's email client takes over &mdash; this page never sees your message.</p>
-      <p>The only outside requests this page makes are: (1) the U.S. Census Geocoder to find your district from your address, (2) OpenStreetMap's Photon for address suggestions, and (3) abacus.jasoncameron.dev for the two anonymous counters below (no cookies, no identifiers &mdash; just a shared integer).</p>
+      <p>The only outside requests this page makes are: (1) the U.S. Census Geocoder to find your district from your address, (2) OpenStreetMap's Photon for address suggestions, and (3) abacus.jasoncameron.dev for the three anonymous counters below (no cookies, no identifiers &mdash; just shared integers).</p>
       <p class="built-by"><strong>Built by the people, for the people &mdash; as a free tool to help stop AB 2017.</strong></p>
     </div>
 
@@ -1837,7 +1851,7 @@ ${city}, CA ${zip}`
     const bodyEditEl = document.getElementById('preview-body-edit');
     const body = (bodyEditedManually && bodyEditEl) ? bodyEditEl.value : buildBody();
 
-    previewTo.textContent = recipients.length > 0 ? recipients.join(", ") : "(look up your reps first)";
+    previewTo.textContent = recipients.length > 0 ? recipients.join(", ") : "(complete the form above to see your personalized email)";
     previewSubject.textContent = subject;
     if (!bodyEditedManually) previewBody.textContent = body;
 
