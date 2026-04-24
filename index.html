@@ -567,6 +567,126 @@
     opacity: 0.95;
   }
 
+  /* ===== Leadership expander (collapsed by default) ===== */
+  .leadership-expander {
+    margin-top: 1rem;
+  }
+  .leadership-expander summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.7rem 0.9rem;
+    color: #fbbf24;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+    user-select: none;
+  }
+  .leadership-expander summary::-webkit-details-marker { display: none; }
+  .leadership-expander summary:hover {
+    background: rgba(251, 191, 36, 0.08);
+    color: #fde68a;
+  }
+  .leadership-expander summary .chev {
+    width: 14px; height: 14px;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  .leadership-expander[open] summary .chev {
+    transform: rotate(90deg);
+  }
+  .leadership-body {
+    margin-top: 0.75rem;
+    padding: 1.1rem;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+  }
+  .leadership-note {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .leadership-note strong { color: #fde68a; }
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  @media (max-width: 560px) {
+    .leadership-grid { grid-template-columns: 1fr; }
+  }
+  .leadership-item {
+    padding: 0.75rem 0.85rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+  .leadership-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.55rem;
+  }
+  .leadership-role {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fbbf24;
+    font-weight: 700;
+  }
+  .leadership-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 0.15rem;
+    line-height: 1.3;
+  }
+  .leadership-meta {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+  }
+  .leadership-actions {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .leadership-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.7rem;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .leadership-btn.call {
+    background: #15803d;
+    color: white;
+    flex: 1;
+  }
+  .leadership-btn.call:hover {
+    background: #16a34a;
+    color: white;
+    transform: translateY(-1px);
+  }
+  .leadership-btn.mail {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.18);
+    min-width: 42px;
+  }
+  .leadership-btn.mail:hover {
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+
   .lookup-status {
     padding: 0.8rem 1rem;
     border-radius: 10px;
@@ -1340,6 +1460,58 @@
           </p>
           <div class="call-btns" id="call-btns"></div>
         </div>
+
+        <details class="leadership-expander" id="leadership-expander">
+          <summary class="leadership-toggle">
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+            <span>Reach the 4 key decision-makers on this bill</span>
+          </summary>
+          <div class="leadership-body">
+            <p class="leadership-note">Not your personal reps, but these 4 offices decide whether AB 2017 moves. <strong>A single 60-second call to the Appropriations Chair or the Speaker often beats 100 emails to the rest of the body.</strong></p>
+            <div class="leadership-grid">
+              <div class="leadership-item">
+                <div class="leadership-info">
+                  <span class="leadership-role">Appropriations Chair</span>
+                  <span class="leadership-name">Asm. Buffy Wicks <span class="leadership-meta">(D, AD 14)</span></span>
+                </div>
+                <div class="leadership-actions">
+                  <a class="leadership-btn call" href="tel:+19163192014" data-leadership-phone>&#9742; (916) 319-2014</a>
+                  <a class="leadership-btn mail" href="mailto:assemblymember.wicks@assembly.ca.gov" aria-label="Email Asm. Buffy Wicks">&#9993;</a>
+                </div>
+              </div>
+              <div class="leadership-item">
+                <div class="leadership-info">
+                  <span class="leadership-role">Assembly Speaker</span>
+                  <span class="leadership-name">Asm. Robert Rivas <span class="leadership-meta">(D, AD 29)</span></span>
+                </div>
+                <div class="leadership-actions">
+                  <a class="leadership-btn call" href="tel:+19163192029" data-leadership-phone>&#9742; (916) 319-2029</a>
+                  <a class="leadership-btn mail" href="mailto:assemblymember.rivas@assembly.ca.gov" aria-label="Email Asm. Robert Rivas">&#9993;</a>
+                </div>
+              </div>
+              <div class="leadership-item">
+                <div class="leadership-info">
+                  <span class="leadership-role">Senate Pres. Pro Tem</span>
+                  <span class="leadership-name">Sen. Mike McGuire <span class="leadership-meta">(D, SD 2)</span></span>
+                </div>
+                <div class="leadership-actions">
+                  <a class="leadership-btn call" href="tel:+19166514002" data-leadership-phone>&#9742; (916) 651-4002</a>
+                  <a class="leadership-btn mail" href="mailto:senator.mcguire@senate.ca.gov" aria-label="Email Sen. Mike McGuire">&#9993;</a>
+                </div>
+              </div>
+              <div class="leadership-item">
+                <div class="leadership-info">
+                  <span class="leadership-role">Assembly Minority Leader</span>
+                  <span class="leadership-name">Asm. James Gallagher <span class="leadership-meta">(R, AD 3)</span></span>
+                </div>
+                <div class="leadership-actions">
+                  <a class="leadership-btn call" href="tel:+19163192003" data-leadership-phone>&#9742; (916) 319-2003</a>
+                  <a class="leadership-btn mail" href="mailto:assemblymember.gallagher@assembly.ca.gov" aria-label="Email Asm. James Gallagher">&#9993;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
 
         <div class="field" style="display: none;" id="manual-override">
           <label>Not right? You can edit the emails above by clicking "edit".</label>
@@ -2319,6 +2491,11 @@ Return ONLY the polished paragraph, nothing else \u2014 no preamble, no quotatio
   loadCounter('visits', 'counter-visits', true);
   loadCounter('emails', 'counter-emails', false);
   loadCounter('calls',  'counter-calls',  false);
+
+  // Track clicks to leadership decision-maker phone numbers in the calls counter
+  document.querySelectorAll('[data-leadership-phone]').forEach(a => {
+    a.addEventListener('click', () => { bumpCallsCounter(); });
+  });
 
   // ============================================================
   // COUNTDOWN — Assembly floor deadline (May 30, 2026 end-of-day Pacific)
