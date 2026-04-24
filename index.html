@@ -1702,19 +1702,19 @@ Examples:
   // Email format: assemblymember.{lastname}@assembly.ca.gov (official current format).
   // Overrides included for multi-word / hyphenated / non-standard last names.
   // Users can edit the email in the UI if their office uses a different alias.
-  // Source: assembly.ca.gov/assemblymembers, individual member contact pages.
+  // Source: OpenStates bulk data (github.com/openstates/people) — all 80 emails verified against official legislator records.
   // ============================================================
   const ASSEMBLY = [
     { d: 1, name: "Heather Hadwick", party: "R", email: "assemblymember.hadwick@assembly.ca.gov" },
     { d: 2, name: "Chris Rogers", party: "D", email: "assemblymember.rogers@assembly.ca.gov" },
     { d: 3, name: "James Gallagher", party: "R", email: "assemblymember.gallagher@assembly.ca.gov" },
     { d: 4, name: "Cecilia Aguiar-Curry", party: "D", email: "assemblymember.aguiar-curry@assembly.ca.gov" },
-    { d: 5, name: "Joe Patterson", party: "R", email: "assemblymember.patterson@assembly.ca.gov" },
+    { d: 5, name: "Joe Patterson", party: "R", email: "assemblymember.joepatterson@assembly.ca.gov" },
     { d: 6, name: "Maggy Krell", party: "D", email: "assemblymember.krell@assembly.ca.gov" },
-    { d: 7, name: "Josh Hoover", party: "R", email: "assemblymember.hoover@assembly.ca.gov" },
+    { d: 7, name: "Joshua Hoover", party: "R", email: "assemblymember.hoover@assembly.ca.gov" },
     { d: 8, name: "David Tangipa", party: "R", email: "assemblymember.tangipa@assembly.ca.gov" },
     { d: 9, name: "Heath Flora", party: "R", email: "assemblymember.flora@assembly.ca.gov" },
-    { d: 10, name: "Stephanie Nguyen", party: "D", email: "assemblymember.nguyen@assembly.ca.gov" },
+    { d: 10, name: "Stephanie Nguyen", party: "D", email: "assemblymember.stephanienguyen@assembly.ca.gov" },
     { d: 11, name: "Lori Wilson", party: "D", email: "assemblymember.wilson@assembly.ca.gov" },
     { d: 12, name: "Damon Connolly", party: "D", email: "assemblymember.connolly@assembly.ca.gov" },
     { d: 13, name: "Rhodesia Ransom", party: "D", email: "assemblymember.ransom@assembly.ca.gov" },
@@ -1722,7 +1722,7 @@ Examples:
     { d: 15, name: "Anamarie Avila Farias", party: "D", email: "assemblymember.avilafarias@assembly.ca.gov" },
     { d: 16, name: "Rebecca Bauer-Kahan", party: "D", email: "assemblymember.bauer-kahan@assembly.ca.gov" },
     { d: 17, name: "Matt Haney", party: "D", email: "assemblymember.haney@assembly.ca.gov" },
-    { d: 18, name: "Mia Bonta", party: "D", email: "assemblymember.bonta@assembly.ca.gov" },
+    { d: 18, name: "Mia Bonta", party: "D", email: "assemblymember.mbonta@assembly.ca.gov" },
     { d: 19, name: "Catherine Stefani", party: "D", email: "assemblymember.stefani@assembly.ca.gov" },
     { d: 20, name: "Liz Ortega", party: "D", email: "assemblymember.ortega@assembly.ca.gov" },
     { d: 21, name: "Diane Papan", party: "D", email: "assemblymember.papan@assembly.ca.gov" },
@@ -1733,17 +1733,17 @@ Examples:
     { d: 26, name: "Patrick Ahrens", party: "D", email: "assemblymember.ahrens@assembly.ca.gov" },
     { d: 27, name: "Esmeralda Soria", party: "D", email: "assemblymember.soria@assembly.ca.gov" },
     { d: 28, name: "Gail Pellerin", party: "D", email: "assemblymember.pellerin@assembly.ca.gov" },
-    { d: 29, name: "Robert Rivas", party: "D", email: "assemblymember.rivas@assembly.ca.gov" },
-    { d: 30, name: "Dawn Addis", party: "D", email: "assemblymember.addis@assembly.ca.gov" },
+    { d: 29, name: "Robert Rivas", party: "D", email: "assemblymember.robertrivas@assembly.ca.gov" },
+    { d: 30, name: "Dawn Addis", party: "D", email: "dawn.addis@asm.ca.gov" },
     { d: 31, name: "Joaquin Arambula", party: "D", email: "assemblymember.arambula@assembly.ca.gov" },
     { d: 32, name: "Stan Ellis", party: "R", email: "assemblymember.ellis@assembly.ca.gov" },
-    { d: 33, name: "Alexandra Macedo", party: "R", email: "assemblymember.macedo@assembly.ca.gov" },
+    { d: 33, name: "Ali Macedo", party: "R", email: "assemblymember.macedo@assembly.ca.gov" },
     { d: 34, name: "Tom Lackey", party: "R", email: "assemblymember.lackey@assembly.ca.gov" },
     { d: 35, name: "Jasmeet Bains", party: "D", email: "assemblymember.bains@assembly.ca.gov" },
     { d: 36, name: "Jeff Gonzalez", party: "R", email: "assemblymember.jeffgonzalez@assembly.ca.gov" },
     { d: 37, name: "Gregg Hart", party: "D", email: "assemblymember.hart@assembly.ca.gov" },
     { d: 38, name: "Steve Bennett", party: "D", email: "assemblymember.bennett@assembly.ca.gov" },
-    { d: 39, name: "Juan Carrillo", party: "D", email: "assemblymember.carrillo@assembly.ca.gov" },
+    { d: 39, name: "Juan Carrillo", party: "D", email: "assemblymember.juancarrillo@assembly.ca.gov" },
     { d: 40, name: "Pilar Schiavo", party: "D", email: "assemblymember.schiavo@assembly.ca.gov" },
     { d: 41, name: "John Harabedian", party: "D", email: "assemblymember.harabedian@assembly.ca.gov" },
     { d: 42, name: "Jacqui Irwin", party: "D", email: "assemblymember.irwin@assembly.ca.gov" },
@@ -1752,10 +1752,10 @@ Examples:
     { d: 45, name: "James Ramos", party: "D", email: "assemblymember.ramos@assembly.ca.gov" },
     { d: 46, name: "Jesse Gabriel", party: "D", email: "assemblymember.gabriel@assembly.ca.gov" },
     { d: 47, name: "Greg Wallis", party: "R", email: "assemblymember.wallis@assembly.ca.gov" },
-    { d: 48, name: "Blanca Rubio", party: "D", email: "assemblymember.blancarubio@assembly.ca.gov" },
-    { d: 49, name: "Mike Fong", party: "D", email: "assemblymember.fong@assembly.ca.gov" },
-    { d: 50, name: "Robert Garcia", party: "D", email: "assemblymember.robertgarcia@assembly.ca.gov" },
-    { d: 51, name: "Rick Chavez Zbur", party: "D", email: "assemblymember.zbur@assembly.ca.gov" },
+    { d: 48, name: "Blanca Rubio", party: "D", email: "assemblymember.rubio@assembly.ca.gov" },
+    { d: 49, name: "Mike Fong", party: "D", email: "assemblymember.mikefong@asm.ca.gov" },
+    { d: 50, name: "Robert Garcia", party: "D", email: "assemblymember.garcia@assembly.ca.gov" },
+    { d: 51, name: "Rick Zbur", party: "D", email: "assemblymember.zbur@assembly.ca.gov" },
     { d: 52, name: "Jessica Caloza", party: "D", email: "assemblymember.caloza@assembly.ca.gov" },
     { d: 53, name: "Michelle Rodriguez", party: "D", email: "assemblymember.michellerodriguez@assembly.ca.gov" },
     { d: 54, name: "Mark Gonzalez", party: "D", email: "assemblymember.markgonzalez@assembly.ca.gov" },
@@ -1766,7 +1766,7 @@ Examples:
     { d: 59, name: "Phillip Chen", party: "R", email: "assemblymember.chen@assembly.ca.gov" },
     { d: 60, name: "Corey Jackson", party: "D", email: "assemblymember.jackson@assembly.ca.gov" },
     { d: 61, name: "Tina McKinnor", party: "D", email: "assemblymember.mckinnor@assembly.ca.gov" },
-    { d: 62, name: "Jose Luis Solache", party: "D", email: "assemblymember.solache@assembly.ca.gov" },
+    { d: 62, name: "Jose Solache", party: "D", email: "assemblymember.solache@assembly.ca.gov" },
     { d: 63, name: "Natasha Johnson", party: "R", email: "assemblymember.johnson@assembly.ca.gov" },
     { d: 64, name: "Blanca Pacheco", party: "D", email: "assemblymember.pacheco@assembly.ca.gov" },
     { d: 65, name: "Mike Gipson", party: "D", email: "assemblymember.gipson@assembly.ca.gov" },
@@ -1782,15 +1782,15 @@ Examples:
     { d: 75, name: "Carl DeMaio", party: "R", email: "assemblymember.demaio@assembly.ca.gov" },
     { d: 76, name: "Darshana Patel", party: "D", email: "assemblymember.patel@assembly.ca.gov" },
     { d: 77, name: "Tasha Boerner", party: "D", email: "assemblymember.boerner@assembly.ca.gov" },
-    { d: 78, name: "Christopher Ward", party: "D", email: "assemblymember.ward@assembly.ca.gov" },
-    { d: 79, name: "LaShae Sharp-Collins", party: "D", email: "assemblymember.sharp-collins@assembly.ca.gov" },
+    { d: 78, name: "Chris Ward", party: "D", email: "assemblymember.ward@assembly.ca.gov" },
+    { d: 79, name: "LaShae Sharp-Collins", party: "D", email: "assemblymember.sharpcollins@assembly.ca.gov" },
     { d: 80, name: "David Alvarez", party: "D", email: "assemblymember.alvarez@assembly.ca.gov" }
   ];
 
   // ============================================================
   // CA STATE SENATE ROSTER — 2025-2026 SESSION (40 members)
   // Email format: senator.{lastname}@senate.ca.gov (hyphenated for compound last names).
-  // Source: senate.ca.gov/senators, individual senator contact pages.
+  // Source: OpenStates bulk data (github.com/openstates/people) — all 40 emails verified against official senator records.
   // ============================================================
   const SENATE = [
     { d: 1, name: "Megan Dahle", party: "R", email: "senator.dahle@senate.ca.gov" },
@@ -1811,27 +1811,27 @@ Examples:
     { d: 16, name: "Melissa Hurtado", party: "D", email: "senator.hurtado@senate.ca.gov" },
     { d: 17, name: "John Laird", party: "D", email: "senator.laird@senate.ca.gov" },
     { d: 18, name: "Steve Padilla", party: "D", email: "senator.padilla@senate.ca.gov" },
-    { d: 19, name: "Rosilicie Ochoa Bogh", party: "R", email: "senator.ochoa-bogh@senate.ca.gov" },
+    { d: 19, name: "Rosilicie Ochoa Bogh", party: "R", email: "senator.ochoabogh@senate.ca.gov" },
     { d: 20, name: "Caroline Menjivar", party: "D", email: "senator.menjivar@senate.ca.gov" },
     { d: 21, name: "Monique Limon", party: "D", email: "senator.limon@senate.ca.gov" },
     { d: 22, name: "Susan Rubio", party: "D", email: "senator.rubio@senate.ca.gov" },
     { d: 23, name: "Suzette Valladares", party: "R", email: "senator.valladares@senate.ca.gov" },
-    { d: 24, name: "Benjamin Allen", party: "D", email: "senator.allen@senate.ca.gov" },
-    { d: 25, name: "Sasha Renee Perez", party: "D", email: "senator.perez@senate.ca.gov" },
+    { d: 24, name: "Ben Allen", party: "D", email: "senator.allen@senate.ca.gov" },
+    { d: 25, name: "Sasha Perez", party: "D", email: "senator.perez@senate.ca.gov" },
     { d: 26, name: "Maria Elena Durazo", party: "D", email: "senator.durazo@senate.ca.gov" },
     { d: 27, name: "Henry Stern", party: "D", email: "senator.stern@senate.ca.gov" },
     { d: 28, name: "Lola Smallwood-Cuevas", party: "D", email: "senator.smallwood-cuevas@senate.ca.gov" },
-    { d: 29, name: "Eloise Gomez Reyes", party: "D", email: "senator.reyes@senate.ca.gov" },
+    { d: 29, name: "Eloise Reyes", party: "D", email: "senator.reyes@senate.ca.gov" },
     { d: 30, name: "Bob Archuleta", party: "D", email: "senator.archuleta@senate.ca.gov" },
     { d: 31, name: "Sabrina Cervantes", party: "D", email: "senator.cervantes@senate.ca.gov" },
     { d: 32, name: "Kelly Seyarto", party: "R", email: "senator.seyarto@senate.ca.gov" },
     { d: 33, name: "Lena Gonzalez", party: "D", email: "senator.gonzalez@senate.ca.gov" },
-    { d: 34, name: "Thomas Umberg", party: "D", email: "senator.umberg@senate.ca.gov" },
+    { d: 34, name: "Tom Umberg", party: "D", email: "senator.umberg@senate.ca.gov" },
     { d: 35, name: "Laura Richardson", party: "D", email: "senator.richardson@senate.ca.gov" },
     { d: 36, name: "Tony Strickland", party: "R", email: "senator.strickland@senate.ca.gov" },
-    { d: 37, name: "Steven Choi", party: "R", email: "senator.choi@senate.ca.gov" },
+    { d: 37, name: "Steve Choi", party: "R", email: "senator.choi@senate.ca.gov" },
     { d: 38, name: "Catherine Blakespear", party: "D", email: "senator.blakespear@senate.ca.gov" },
-    { d: 39, name: "Akilah Weber Pierson", party: "D", email: "senator.pierson@senate.ca.gov" },
+    { d: 39, name: "Akilah Weber Pierson", party: "D", email: "senator.weber@senate.ca.gov" },
     { d: 40, name: "Brian Jones", party: "R", email: "senator.jones@senate.ca.gov" }
   ];
 
