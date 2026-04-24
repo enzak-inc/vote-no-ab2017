@@ -1036,22 +1036,29 @@
      MOBILE OPTIMIZATIONS
      ========================================================= */
   @media (max-width: 640px) {
-    /* Tighter container padding */
-    .container { padding: 0 1.1rem; }
+    /* Breathing room on sides */
+    .container { padding: 0 1.4rem; }
 
     /* Section vertical rhythm */
     section { padding: 2.75rem 0; }
 
     /* Hero */
     .hero { min-height: auto; }
-    .hero-inner { padding: 4rem 0 3rem; }
-    .hero h1 { font-size: 2.2rem; line-height: 1.1; }
-    .hero p.lead { font-size: 1rem; line-height: 1.55; margin-bottom: 1.5rem; }
-    .cta-row { gap: 0.55rem; }
-    .cta-row .btn { flex: 1; min-width: 0; }
+    .hero-inner { padding: 3.5rem 0 2.75rem; }
+    .hero h1 { font-size: 2rem; line-height: 1.1; }
+    .hero p.lead { font-size: 0.98rem; line-height: 1.55; margin-bottom: 1.4rem; }
+    .cta-row { gap: 0.55rem; flex-wrap: wrap; }
+    .cta-row .btn { flex: 1 1 140px; min-width: 0; }
 
-    /* Buttons — slightly tighter */
-    .btn { padding: 0.85rem 1rem; font-size: 0.92rem; }
+    /* Buttons — tighter on mobile */
+    .btn {
+      padding: 0.7rem 0.85rem;
+      font-size: 0.86rem;
+      gap: 0.35rem;
+      line-height: 1.2;
+    }
+    .btn-ghost svg { width: 16px; height: 16px; }
+    .btn-primary { padding: 0.75rem 0.9rem; }
 
     /* Countdown card: header stacks, cells shrink gracefully */
     .countdown-card { padding: 0.95rem 1rem; margin-bottom: 1.25rem; }
@@ -1162,9 +1169,11 @@
 
   /* Very small phones (320-380px) */
   @media (max-width: 380px) {
+    .container { padding: 0 1.15rem; }
     .countdown-cell .cd-num { font-size: 1.55rem; }
     .countdown-cell .cd-unit { font-size: 0.55rem; }
-    .hero h1 { font-size: 2rem; }
+    .hero h1 { font-size: 1.85rem; }
+    .hero p.lead { font-size: 0.94rem; }
     .field-row.three { grid-template-columns: 1fr; }
     .field-row.three .field:nth-child(1) { grid-column: auto; }
     .cta-row { flex-direction: column; }
