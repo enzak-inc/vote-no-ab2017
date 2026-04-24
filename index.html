@@ -558,21 +558,6 @@
     margin-top: 0.4rem;
   }
 
-  .toast {
-    position: fixed;
-    bottom: 24px; left: 50%;
-    transform: translate(-50%, 120%);
-    background: var(--success);
-    color: white;
-    padding: 0.85rem 1.35rem;
-    border-radius: 10px;
-    font-weight: 600;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-    z-index: 100;
-    font-size: 0.95rem;
-  }
-  .toast.show { transform: translate(-50%, 0); }
 
   .resource-grid {
     display: grid;
@@ -978,7 +963,6 @@ Examples:
   </div>
 </footer>
 
-<div id="toast" class="toast">Copied!</div>
 
 <script>
   // ============================================================
@@ -1156,7 +1140,6 @@ Examples:
   const previewSubject = el('preview-subject');
   const previewBody = el('preview-body');
   const mailtoBtn = el('mailto-btn');
-  const toast = el('toast');
 
   let lookedUpReps = null; // { assembly: {d, name, email}, senate: {d, name, email} }
   let bodyEditedManually = false;
@@ -1444,26 +1427,20 @@ ${city}, CA ${zip}`
   // ============================================================
   // COPY HELPERS
   // ============================================================
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(() => toast.classList.remove('show'), 1800);
-  }
-
-  async function copyToClipboard(text, label) {
+  async function copyToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
-      showToast(`${label} copied`);
+      return true;
     } catch (err) {
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.opacity = '0';
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand('copy'); showToast(`${label} copied`); }
-      catch (e) { showToast('Copy failed — select manually'); }
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (_) {}
       document.body.removeChild(ta);
+      return ok;
     }
   }
 
@@ -1471,11 +1448,11 @@ ${city}, CA ${zip}`
   document.querySelectorAll('.pv-copy').forEach(btn => {
     btn.addEventListener('click', async () => {
       const which = btn.dataset.copy;
-      let text = '', label = '';
-      if (which === 'to') { text = collectRecipients().join(", "); label = 'To list'; }
-      else if (which === 'subject') { text = buildSubject(); label = 'Subject'; }
-      else if (which === 'body') { text = getCurrentBody(); label = 'Body'; }
-      await copyToClipboard(text, label);
+      let text = '';
+      if (which === 'to') text = collectRecipients().join(", ");
+      else if (which === 'subject') text = buildSubject();
+      else if (which === 'body') text = getCurrentBody();
+      await copyToClipboard(text);
       btn.classList.add('copied');
       btn.innerHTML = '\u2713 Copied';
       setTimeout(() => {
@@ -1528,7 +1505,8 @@ ${city}, CA ${zip}`
   // ============================================================
   // CHATGPT POLISH — opens chatgpt.com with a pre-filled prompt
   // ============================================================
-  el('polish-btn').addEventListener('click', () => {
+  const polishBtn = el('polish-btn');
+  polishBtn.addEventListener('click', () => {
     const draft = personalInput.value.trim();
     const promptText = `I'm writing an email to my California state legislators opposing AB 2017, a bill that would formally recognize two Islamic holidays (Eid al-Fitr and Eid al-Adha) as California state holidays.
 
@@ -1544,7 +1522,11 @@ Return ONLY the polished paragraph, nothing else \u2014 no preamble, no quotatio
 
     const url = 'https://chatgpt.com/?q=' + encodeURIComponent(promptText);
     window.open(url, '_blank', 'noopener');
-    showToast('Opened ChatGPT \u2014 paste the polished version back here');
+    const originalLabel = polishBtn.innerHTML;
+    polishBtn.innerHTML = '\u2713 Opened in new tab \u2014 paste back here';
+    setTimeout(() => {
+      polishBtn.innerHTML = originalLabel;
+    }, 2800);
   });
 
   // ============================================================
