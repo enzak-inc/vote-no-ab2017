@@ -25,7 +25,7 @@ All phase-specific copy, targets, deadlines, timeline entries, and letter text l
 
 - `ab-2017-bill-text/index.html` and the Markdown twin `ab-2017-bill-text.md` are generated from the official text on leginfo.legislature.ca.gov (bill_id `202520260AB2017`).
 - To refresh after a new amendment or chaptering: save the leginfo bill-text page HTML, run the converter (`bill_to_html.py` then `assemble_fulltext.py`, kept in the session scratchpad; copy them into `scripts/` if this becomes routine), update the "This version" meta line, the "What changed" section, and `lastmod` in `sitemap.xml`.
-- The `.md` file is served as `text/markdown` via `_headers`.
+- The `.md` file is served as `text/plain` via `_headers` (not `text/markdown`: ChatGPT's reader and browsers only render HTML and plain text). The Ask-ChatGPT prompt points at the HTML page first, the `.md` second, leginfo third.
 
 ## SEO checks
 

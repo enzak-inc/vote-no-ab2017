@@ -12,7 +12,7 @@
 <meta name="color-scheme" content="light" />
 <meta http-equiv="content-language" content="en-US" />
 <link rel="canonical" href="https://vote-no-ab2017.com/ab-2017-bill-text/" />
-<link rel="alternate" type="text/markdown" href="https://vote-no-ab2017.com/ab-2017-bill-text.md" title="Markdown version" />
+<link rel="alternate" type="text/plain" href="https://vote-no-ab2017.com/ab-2017-bill-text.md" title="Plain-text (Markdown) version" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="article" />
@@ -326,10 +326,10 @@
       </div>
       <template id="ask-prompt">I want to understand California AB 2017 ("State holidays: Eid"), the bill that adds Eid al-Fitr and Eid al-Adha to California's state holiday calendar. It passed the Legislature on August 30, 2026 and is on Governor Newsom's desk (sign-or-veto deadline September 30, 2026).
 
-Please read the FULL TEXT of the bill as amended in the Senate on August 27, 2026. It is plain Markdown, about 13,000 words, 30 sections:
-https://vote-no-ab2017.com/ab-2017-bill-text.md
+Please read the FULL TEXT of the bill as amended in the Senate on August 27, 2026 (about 13,000 words; 30 sections, because Sections 2.5, 4.5, 5.5, 6.5, 7.1-7.3, 8.1-8.3 and 9.1-9.3 are alternate versions that apply only if other bills also pass). Open this page and read the whole thing, including the Legislative Counsel's Digest:
+https://vote-no-ab2017.com/ab-2017-bill-text/
 
-If you cannot open links, tell me so, and use the official source instead: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2017
+A plain-text copy of the same text is at https://vote-no-ab2017.com/ab-2017-bill-text.md and the official source is https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2017 — use whichever you can open. If you cannot open any link, tell me so.
 
 After you have read it:
 1. Confirm which version you read and how many sections it has.
@@ -687,8 +687,10 @@ After you have read it:
 
 <script>
   // "Ask ChatGPT / Claude / Perplexity" — prefill each assistant with the prompt in #ask-prompt.
-  // The prompt points the assistant at the Markdown twin of this page (13k words is far
-  // beyond what fits in a URL, so the assistant fetches it; our robots.txt allows ChatGPT-User).
+  // The prompt points the assistant at this HTML page (13k words is far beyond what fits in
+  // a URL, so the assistant fetches it; our robots.txt allows ChatGPT-User). The .md twin is
+  // offered as a plain-text alternative — it is served as text/plain because ChatGPT's reader
+  // and browsers will not render text/markdown.
   (function () {
     var tpl = document.getElementById('ask-prompt');
     if (!tpl) return;

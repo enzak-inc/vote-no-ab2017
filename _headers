@@ -31,7 +31,8 @@
   Cache-Control: public, max-age=3600
 
 /ab-2017-bill-text.md
-  Content-Type: text/markdown; charset=utf-8
+  # text/plain, not text/markdown: browsers and ChatGPT's reader will not render text/markdown
+  Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
 
 /robots.txt
