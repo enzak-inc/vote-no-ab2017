@@ -34,7 +34,9 @@ All phase-specific copy, targets, deadlines, timeline entries, and letter text l
 - OG images: `og.jpg` + `og-4x3.jpg` + `og-square.jpg` (home) and `og-full-text*.jpg` (bill page) are referenced in the JSON-LD `image` arrays. Regenerate with the `make_og_set.py` recipe (Pillow + Playfair/Inter TTFs) when the headline changes.
 - Google Search Console: the site is not yet a verified property on the enzak account. Add it (DNS TXT via Cloudflare) and submit `https://vote-no-ab2017.com/sitemap.xml`.
 
-To reuse the site for a different bill: change `bill:`, `governor:`, `timeline:`, `stages:`, `provisions:`, `redFlags:`, `letters:`, and `polishPrompt:` in `campaign.js`; update the static copy in `index.html` (title, meta, About section, JSON-LD, FAQ); update the rosters if the session changed.
+The **Potential Taxpayer Cost** strip (under the hero) and section (after About) are also config-driven: `cost:` in `campaign.js` (headline, per-day figure, formula, body HTML, sources). Every figure there is quoted from the Legislature's own Appropriations analyses (leginfo bill analysis page); change the numbers only with a new official analysis in hand, then `npm run render`.
+
+To reuse the site for a different bill: change `bill:`, `governor:`, `cost:`, `timeline:`, `stages:`, `provisions:`, `redFlags:`, `letters:`, and `polishPrompt:` in `campaign.js`; update the static copy in `index.html` (title, meta, About section, JSON-LD, FAQ); update the rosters if the session changed.
 
 ## Deploy (Cloudflare Pages)
 

@@ -39,7 +39,9 @@ let changes = 0;
 function replaceBetween(marker, content) {
   const re = new RegExp(`(<!-- static:${marker} -->)[\\s\\S]*?(<!-- /static:${marker} -->)`);
   if (!re.test(html)) { console.warn(`render-static: marker "${marker}" not found`); return; }
-  html = html.replace(re, `$1${content}$2`);
+  // replacer FUNCTION, not a string: content like "$137.6 million" contains "$1",
+  // which String.replace would otherwise treat as a backreference.
+  html = html.replace(re, (m, open, close) => open + content + close);
   changes++;
 }
 
@@ -72,11 +74,13 @@ replaceBetween('stage-tracker', R.stageTracker(CAMPAIGN, PHASE_KEY));
 replaceBetween('timeline', R.timeline(CAMPAIGN, PHASE_KEY));
 replaceBetween('provisions', R.provisions(CAMPAIGN));
 replaceBetween('redflags', R.redFlags(CAMPAIGN));
+replaceBetween('cost', R.cost(CAMPAIGN));
+replaceBetween('cost-strip', R.costStrip(CAMPAIGN));
 
 // 4. countdown label/date, take-action copy, hero CTA target
 const CD = PHASE.countdown || { show: false };
-html = html.replace(/(<span id="cd-label">)[\s\S]*?(<\/span>)/, `$1${CD.label || ''}$2`);
-html = html.replace(/(<span class="cd-date" id="cd-date">)[\s\S]*?(<\/span>)/, `$1${CD.dateText ? '&mdash; ' + CD.dateText : ''}$2`);
+html = html.replace(/(<span id="cd-label">)[\s\S]*?(<\/span>)/, (m, a, b) => a + (CD.label || '') + b);
+html = html.replace(/(<span class="cd-date" id="cd-date">)[\s\S]*?(<\/span>)/, (m, a, b) => a + (CD.dateText ? '&mdash; ' + CD.dateText : '') + b);
 html = html.replace(/(<div class="countdown-card" id="countdown-card"[^>]*?)(\s+hidden)?(>)/, (m, a, h, c) => `${a}${CD.show ? '' : ' hidden'}${c}`);
 const TAKE_ACTION_COPY = {
   legislators: { title: 'Contact Your Legislators', sub: 'Enter your address &mdash; we\'ll automatically find your Assembly Member and State Senator.' },
@@ -84,10 +88,10 @@ const TAKE_ACTION_COPY = {
 };
 const copy = TAKE_ACTION_COPY[TARGET];
 if (copy) {
-  html = html.replace(/(<h2 style="text-align: center;" id="take-action-title">)[\s\S]*?(<\/h2>)/, `$1${copy.title}$2`);
-  html = html.replace(/(id="take-action-sub">)[\s\S]*?(<\/p>)/, `$1\n      ${copy.sub}\n    $2`);
+  html = html.replace(/(<h2 style="text-align: center;" id="take-action-title">)[\s\S]*?(<\/h2>)/, (m, a, b) => a + copy.title + b);
+  html = html.replace(/(id="take-action-sub">)[\s\S]*?(<\/p>)/, (m, a, b) => `${a}\n      ${copy.sub}\n    ${b}`);
 }
-html = html.replace(/(<a href=")[^"]*(" class="btn btn-primary" id="hero-cta")/, `$1${TARGET === 'none' ? '#bill-status' : '#take-action'}$2`);
+html = html.replace(/(<a href=")[^"]*(" class="btn btn-primary" id="hero-cta")/, (m, a, b) => a + (TARGET === 'none' ? '#bill-status' : '#take-action') + b);
 html = html.replace(/(<p class="share-footer-note" id="share-footer-note">)[\s\S]*?(<\/p>)/, (m, a, b) => {
   const txt = CD.show ? (PHASE.shareFooter || '').replace('{days}', '<span id="days-left-share">&mdash;</span>') : (PHASE.shareFooter || '');
   return `${a}\n      &#9201; ${txt}\n    ${b}`;

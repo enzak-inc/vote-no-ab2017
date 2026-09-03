@@ -223,6 +223,34 @@ window.CAMPAIGN = {
   ],
 
   /* ------------------------------------------------------------------------
+     POTENTIAL TAXPAYER COST — every number comes from the Legislature's own
+     fiscal analyses of AB 2017 (Senate Appropriations, Aug 13, 2026; Assembly
+     Appropriations, May 6, 2026) and of the identical Diwali law (AB 268,
+     Senate Appropriations, Aug 18, 2025). We only multiplied by two.
+     ------------------------------------------------------------------------ */
+  cost: {
+    label: 'Potential Taxpayer Cost',
+    headline: '$137.6 million',
+    sub: 'potential statewide K–12 classified payroll exposure from two paid Eid holidays',
+    perDay: '$68.8 million',
+    perDayLabel: 'per statewide paid day for classified school employees (CDE estimate)',
+    days: 2,
+    formula: '<b>$68.8 million</b> per paid day &times; <b>2</b> Eid holidays = <b>$137.6 million</b>',
+    stripText: 'in potential K–12 payroll exposure, using the Legislature’s own per-day estimate.',
+    stripCta: 'See the math &darr;',
+    body: '<p>California has not published a final statewide price tag for AB 2017. The Legislature’s own fiscal analyses of the bill show how large the exposure could be if school districts broadly adopt its paid-holiday provision.</p>'
+      + '<p>In the <strong>Senate Appropriations Committee analysis of AB 2017</strong> (August 13, 2026), the California Department of Education reported that K–12 local educational agencies paid <strong>$17.78 billion</strong> in classified-employee salaries in 2023–24. Assuming 260 unadjusted working days, CDE put the statewide cost of <strong>one day of classified pay at approximately $68.8 million</strong>. The same CDE figure appears in the Senate’s 2025 analysis of the Diwali holiday law (AB 268), which AB 2017 copies.</p>'
+      + '<p>AB 2017 authorizes <strong>two</strong> paid holidays, Eid al-Fitr and Eid al-Adha, for classified school employees wherever a district’s board agrees in a memorandum of understanding (Education Code 45203). Applying the Legislature’s own method, two statewide paid days represent approximately <strong>$137.6 million in K–12 classified payroll exposure</strong>.</p>'
+      + '<p><strong>This is not a claim that AB 2017 will automatically cost taxpayers $137.6 million.</strong> Actual costs depend on how many districts negotiate the holidays and whether they add the days or swap them for existing paid days. But the bill’s own <strong>Assembly Appropriations analysis</strong> (May 6, 2026) calls the cost pressures “unknown, but potentially significant,” notes there are over 900 school districts and 73 community college districts, and warns that when a holiday falls on a Tuesday or Thursday attendance drops around it: “since K-12 public schools are funded by student attendance … this bill could result in reduced school funding.” The Senate analysis adds community-college costs “in the tens to low hundreds of thousands of dollars,” $300,000 to develop the state curriculum guide, and it all lands as the Legislative Analyst’s Office warns of General Fund deficits of around $35 billion a year from 2027–28.</p>'
+      + '<p>The $137.6 million figure is a transparent exposure calculation built on the Legislature’s $68.8-million-per-day estimate, not a number invented by this site.</p>',
+    sources: [
+      { t: 'Senate Appropriations Committee, AB 2017 analysis (Aug 13, 2026)', d: '“The statewide cost of one day of pay for classified employees … is approximately $68.8 million.” Unknown, potentially significant fiscal impact to LEAs (Proposition 98 General Fund).', url: 'https://leginfo.legislature.ca.gov/faces/billAnalysisClient.xhtml?bill_id=202520260AB2017', pdf: 'https://billtexts.s3.amazonaws.com/ca/ca-analysishttps-leginfo-legislature-ca-gov-faces-billAnalysisClient-xhtml-bill-id-202520260AB2017-ca-analysis-403551.pdf' },
+      { t: 'Assembly Appropriations Committee, AB 2017 analysis (May 6, 2026)', d: '“Costs pressures of an unknown, but potentially significant amount, in excess of $150,000, across school districts and community college districts …” plus the attendance-funding warning and the LAO deficit note.', url: 'https://leginfo.legislature.ca.gov/faces/billAnalysisClient.xhtml?bill_id=202520260AB2017', pdf: 'https://billtexts.s3.amazonaws.com/ca/ca-analysishttps-leginfo-legislature-ca-gov-faces-billAnalysisClient-xhtml-bill-id-202520260AB2017-ca-analysis-397629.pdf' },
+      { t: 'Senate Appropriations Committee, AB 268 (Diwali) analysis (Aug 18, 2025)', d: 'CDE: LEAs paid $17,781,260,179 in classified salaries in 2023–24; one statewide day of classified pay ≈ $68.8 million. The precedent AB 2017 is modeled on.', url: 'https://leginfo.legislature.ca.gov/faces/billAnalysisClient.xhtml?bill_id=202520260AB268', pdf: 'https://billtexts.s3.amazonaws.com/ca/ca-analysishttps-leginfo-legislature-ca-gov-faces-billAnalysisClient-xhtml-bill-id-202520260AB268-ca-analysis-390765.pdf' }
+    ]
+  },
+
+  /* ------------------------------------------------------------------------
      WHAT THE FINAL TEXT DOES — plain language, from the Legislative Counsel's
      Digest and the amended code sections (Aug 27, 2026 text).
      ------------------------------------------------------------------------ */
@@ -262,6 +290,11 @@ window.CAMPAIGN = {
       d: 'Education Code 45203 and 88203. Two more paid holidays become a bargaining chip in every school and community college district. Districts carry the cost.'
     },
     {
+      t: 'The Legislature priced one paid day at $68.8 million',
+      q: 'Assuming 260 unadjusted working days, the statewide cost of one day of pay for classified employees of school districts, county offices of education, charter schools, and K-12 joint powers authorities is approximately $68.8 million.',
+      d: 'Senate Appropriations Committee analysis of AB 2017, August 13, 2026. Two Eid holidays make that $137.6 million of potential K–12 payroll exposure, depending on how many districts adopt them. The Assembly analysis calls the cost pressures “unknown, but potentially significant.” See the taxpayer-cost section above.'
+    },
+    {
       t: 'Eid exercises in classrooms and a state model curriculum',
       q: 'public schools and educational institutions throughout this state may include exercises, funded through existing resources, exploring the history of Eid al-Fitr and Eid al-Adha. The State Board of Education may adopt a model curriculum guide',
       d: 'Education Code 37220.7(e). From February through June the same clause read “acknowledging and celebrating the meaning and importance” of Eid, copied word for word from the 2025 Diwali law. It was softened on August 13 after public criticism. As the California Family Council points out, no California statute authorizes school exercises for Christmas, Easter, or Good Friday.'
@@ -298,7 +331,7 @@ window.CAMPAIGN = {
     },
     governor: {
       subject: 'Please veto AB 2017 — {city}, CA resident',
-      body: 'Dear Governor Newsom,\n\nI am a California resident writing to respectfully ask you to VETO AB 2017 (State holidays: Eid).\n\n{personal}\n\nAB 2017 adds two religious holidays to the state calendar, yet the bill text never uses the word “religion,” calling the change a “civil calendar determination.” Its own findings say one purpose is to protect school attendance funding. It lets districts add paid holidays for staff through union agreements, and it authorizes classroom Eid exercises and a state model curriculum guide. The student excused-absence guarantee the sponsors advertised was removed in June. Religious observance is already protected under existing California and federal law.\n\nCalifornia has long kept its statutes neutral toward specific faiths. For neutrality and equal treatment across all faiths, please veto AB 2017.\n\nThank you for your consideration.\n\nSincerely,\n{name}\n{street}\n{city}, CA {zip}{districtLine}'
+      body: 'Dear Governor Newsom,\n\nI am a California resident writing to respectfully ask you to VETO AB 2017 (State holidays: Eid).\n\n{personal}\n\nAB 2017 adds two religious holidays to the state calendar, yet the bill text never uses the word “religion,” calling the change a “civil calendar determination.” Its own findings say one purpose is to protect school attendance funding. It lets districts add paid holidays for staff through union agreements, and it authorizes classroom Eid exercises and a state model curriculum guide. The student excused-absence guarantee the sponsors advertised was removed in June. Religious observance is already protected under existing California and federal law.\n\nThe Senate Appropriations Committee’s own analysis prices one statewide paid day for classified school staff at about $68.8 million. Two Eid holidays expose K–12 payroll to roughly $137.6 million if districts adopt them, at a time the Legislative Analyst warns of $35 billion annual deficits.\n\nCalifornia has long kept its statutes neutral toward specific faiths. For neutrality and equal treatment across all faiths, please veto AB 2017.\n\nThank you for your consideration.\n\nSincerely,\n{name}\n{street}\n{city}, CA {zip}{districtLine}'
     }
   },
 

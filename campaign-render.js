@@ -54,5 +54,22 @@
     }).join('');
   }
 
-  return { resolvePhaseKey: resolvePhaseKey, stageTracker: stageTracker, timeline: timeline, provisions: provisions, redFlags: redFlags };
+  // Potential taxpayer cost: the strip under the hero and the full section.
+  function costStrip(campaign) {
+    var c = campaign.cost;
+    if (!c) return '';
+    return '<span class="lbl">' + c.label + '</span><span class="num">' + c.headline + '</span><span class="txt">' + c.stripText + '</span><span class="cta">' + (c.stripCta || 'See the math') + '</span>';
+  }
+
+  function cost(campaign) {
+    var c = campaign.cost;
+    if (!c) return '';
+    var sources = (c.sources || []).map(function (s) {
+      return '<a href="' + s.url + '" target="_blank" rel="noopener"><strong>' + s.t + '</strong>' + s.d + (s.pdf ? ' <span class="pdf">(<span class="u">PDF copy</span>: ' + s.pdf.replace(/^https?:\/\/([^/]+).*$/, '$1') + ')</span>' : '') + '</a>';
+    }).join('');
+    return '<div class="cost-card"><span class="lbl">' + c.label + '</span><div class="num">' + c.headline + '</div><div class="sub">' + c.sub + '</div><div class="cost-math" id="cost-math">' + c.formula + '</div><div class="perday"><b>' + c.perDay + '</b> ' + c.perDayLabel + '</div></div>'
+      + '<div class="cost-body"><h3 id="how-we-got-the-number">How the Legislature’s own numbers produce it</h3>' + c.body + '<h3 id="cost-sources">Sources</h3><div class="cost-sources">' + sources + '</div></div>';
+  }
+
+  return { resolvePhaseKey: resolvePhaseKey, stageTracker: stageTracker, timeline: timeline, provisions: provisions, redFlags: redFlags, cost: cost, costStrip: costStrip };
 });
