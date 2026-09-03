@@ -1,12 +1,12 @@
 ---
-title: "AB 2017 Full Text — California Eid State Holiday Bill (as amended August 27, 2026)"
-canonical: https://vote-no-ab2017.com/ab-2017-full-text/
+title: "AB 2017 Bill Text — California Eid State Holiday Bill (as amended August 27, 2026)"
+canonical: https://vote-no-ab2017.com/ab-2017-bill-text/
 source: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2017
 status: Passed Legislature Aug 30, 2026; on Governor Newsom's desk; sign-or-veto deadline Sept 30, 2026
 published: 2026-09-02
 ---
 
-# AB 2017 Full Text — AB 2017, as amended, Haney. State holidays: Eid.
+# AB 2017 Bill Text — AB 2017, as amended, Haney. State holidays: Eid.
 
 *An act to amend Section 135 of the Code of Civil Procedure, to amend Sections 37220.7, 45203, 79020, and 88203 of the Education Code, and to amend Sections 6700, 19853, and 19853.1 of the Government Code, relating to state holidays.*
 
@@ -403,4 +403,4 @@ Section 6.5 of this bill incorporates amendments to Section 88203 of the Educati
 
 ---
 
-HTML version with table of contents, what changed between versions, and FAQ: https://vote-no-ab2017.com/ab-2017-full-text/
+HTML version with table of contents, what changed between versions, and FAQ: https://vote-no-ab2017.com/ab-2017-bill-text/

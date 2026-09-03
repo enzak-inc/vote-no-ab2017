@@ -41,8 +41,8 @@ None of them correlate with identity. None of them see the user's name or email 
 ├── index.html                        # page — HTML, CSS, JS inline; components tagged data-phases / data-target
 ├── campaign.js                       # THE file to edit when the bill moves: phase, deadlines, copy, timeline, letters
 ├── campaign-render.js                # HTML builders shared by the browser and the static render step
-├── ab-2017-full-text/index.html      # full bill text page (SEO landing page, generated from leginfo)
-├── ab-2017-full-text.md              # Markdown twin of the bill text (served as text/markdown)
+├── ab-2017-bill-text/index.html      # full bill text page (SEO landing page, generated from leginfo)
+├── ab-2017-bill-text.md              # Markdown twin of the bill text (served as text/markdown)
 ├── og-4x3.jpg, og-square.jpg         # 4:3 and 1:1 siblings of og.jpg for Google's image ratio set
 ├── og-full-text*.jpg                 # OG set for the bill text page
 ├── OPERATIONS.md                     # how to change phase, render, preview, deploy

@@ -21,15 +21,15 @@ All phase-specific copy, targets, deadlines, timeline entries, and letter text l
 5. Preview before deploying: `http://localhost:8080/?phase=signed` (any phase key). Add `&debug=1` for console logs tagged `[PHASE] [LOOKUP] [LETTER] [COUNTER] [SHARE]`.
 6. Bump `<lastmod>` in `sitemap.xml`, update `llms.txt` / `llms-full.txt` status lines, regenerate `og.jpg` if the headline changed.
 
-## Full bill text page (`/ab-2017-full-text/`)
+## Full bill text page (`/ab-2017-bill-text/`)
 
-- `ab-2017-full-text/index.html` and the Markdown twin `ab-2017-full-text.md` are generated from the official text on leginfo.legislature.ca.gov (bill_id `202520260AB2017`).
+- `ab-2017-bill-text/index.html` and the Markdown twin `ab-2017-bill-text.md` are generated from the official text on leginfo.legislature.ca.gov (bill_id `202520260AB2017`).
 - To refresh after a new amendment or chaptering: save the leginfo bill-text page HTML, run the converter (`bill_to_html.py` then `assemble_fulltext.py`, kept in the session scratchpad; copy them into `scripts/` if this becomes routine), update the "This version" meta line, the "What changed" section, and `lastmod` in `sitemap.xml`.
 - The `.md` file is served as `text/markdown` via `_headers`.
 
 ## SEO checks
 
-- `npm run pagespeed` — Core Web Vitals via Google PageSpeed Insights for `/` (add paths as extra args, e.g. `npm run pagespeed -- https://vote-no-ab2017.com / /ab-2017-full-text/`).
+- `npm run pagespeed` — Core Web Vitals via Google PageSpeed Insights for `/` (add paths as extra args, e.g. `npm run pagespeed -- https://vote-no-ab2017.com / /ab-2017-bill-text/`).
 - OG images: `og.jpg` + `og-4x3.jpg` + `og-square.jpg` (home) and `og-full-text*.jpg` (bill page) are referenced in the JSON-LD `image` arrays. Regenerate with the `make_og_set.py` recipe (Pillow + Playfair/Inter TTFs) when the headline changes.
 - Google Search Console: the site is not yet a verified property on the enzak account. Add it (DNS TXT via Cloudflare) and submit `https://vote-no-ab2017.com/sitemap.xml`.
 

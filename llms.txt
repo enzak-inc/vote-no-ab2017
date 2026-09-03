@@ -42,7 +42,7 @@
 ## Key Pages
 
 - [Home](https://vote-no-ab2017.com/): Bill status timeline, what is in the final text, veto-request tool, share tools
-- [AB 2017 full text](https://vote-no-ab2017.com/ab-2017-full-text/): Complete bill text as amended August 27, 2026, with Legislative Counsel's Digest, every section, table of contents, and what changed between versions. Markdown twin: https://vote-no-ab2017.com/ab-2017-full-text.md
+- [AB 2017 bill text](https://vote-no-ab2017.com/ab-2017-bill-text/): Complete bill text as amended August 27, 2026, with Legislative Counsel's Digest, every section, table of contents, and what changed between versions. Markdown twin: https://vote-no-ab2017.com/ab-2017-bill-text.md
 
 ## External Resources
 
