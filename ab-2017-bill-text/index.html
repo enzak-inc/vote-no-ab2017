@@ -176,6 +176,17 @@
   .meta .k { display: block; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
   .meta .v { font-weight: 600; color: var(--navy); }
   .status { display: inline-block; padding: 0.25rem 0.65rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; background: var(--amber-bg); color: var(--amber-ink); }
+  .ask { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); color: white; border-radius: 14px; padding: 1.25rem 1.4rem; margin: 1.25rem 0 0; display: grid; gap: 0.9rem; box-shadow: 0 16px 40px -24px rgba(11,37,69,0.6); }
+  @media (min-width: 760px) { .ask { grid-template-columns: 1.35fr 1fr; align-items: center; } }
+  .ask h2 { color: white; margin: 0 0 0.35rem; font-size: 1.3rem; }
+  .ask p { color: rgba(255,255,255,0.9); margin: 0; font-size: 0.93rem; }
+  .ask-btns { display: grid; gap: 0.5rem; }
+  .btn-ask { display: block; text-align: center; padding: 0.8rem 1rem; border-radius: 10px; text-decoration: none; font-weight: 600; background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.28); transition: background 0.15s, transform 0.15s; }
+  .btn-ask:hover { color: white; background: rgba(255,255,255,0.22); transform: translateY(-1px); }
+  .btn-ask.primary { background: #10a37f; border-color: #10a37f; font-size: 1.02rem; padding: 0.95rem 1rem; }
+  .btn-ask.primary:hover { background: #0d8a6b; }
+  .cta a.btn.secondary { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.35); margin-left: 0.5rem; }
+  .cta a.btn.secondary:hover { background: rgba(255,255,255,0.24); }
   .tldr { background: white; border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.1rem 1.3rem; margin: 1.5rem 0; }
   .tldr h2 { margin: 0 0 0.6rem; font-size: 1.15rem; }
   .tldr ul { margin-left: 1.1rem; }
@@ -247,6 +258,7 @@
     <div class="toc-box">
       <h2>On this page</h2>
       <ol>
+        <li><a href="#ask-ai">Ask ChatGPT about the bill</a></li>
         <li><a href="#summary">Summary</a></li>
         <li><a href="#votes">Votes and status</a></li>
         <li><a href="#digest">Legislative Counsel’s Digest</a></li>
@@ -301,6 +313,30 @@
       <div><span class="k">Status</span><span class="status">On the Governor’s desk — sign or veto by Sept 30</span></div>
       <div><span class="k">Length</span><span class="v">13,049 words · 30 sections</span></div>
     </div>
+
+    <section class="ask" id="ask-ai" aria-labelledby="ask-h">
+      <div class="ask-text">
+        <h2 id="ask-h">Ask ChatGPT anything about this bill</h2>
+        <p>One click opens ChatGPT with a ready-made prompt: read the full bill text from this site, summarize it in plain English, quote the key sections, then answer your own questions with section citations. Works the same in Claude or Perplexity.</p>
+      </div>
+      <div class="ask-btns">
+        <a class="btn-ask primary" id="ask-chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">Ask ChatGPT about AB 2017 &#8599;</a>
+        <a class="btn-ask" id="ask-claude" href="https://claude.ai/new" target="_blank" rel="noopener">Ask Claude</a>
+        <a class="btn-ask" id="ask-perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Ask Perplexity</a>
+      </div>
+      <template id="ask-prompt">I want to understand California AB 2017 ("State holidays: Eid"), the bill that adds Eid al-Fitr and Eid al-Adha to California's state holiday calendar. It passed the Legislature on August 30, 2026 and is on Governor Newsom's desk (sign-or-veto deadline September 30, 2026).
+
+Please read the FULL TEXT of the bill as amended in the Senate on August 27, 2026. It is plain Markdown, about 13,000 words, 30 sections:
+https://vote-no-ab2017.com/ab-2017-bill-text.md
+
+If you cannot open links, tell me so, and use the official source instead: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2017
+
+After you have read it:
+1. Confirm which version you read and how many sections it has.
+2. Give me a plain-English summary in 6 bullets: what it changes, who it affects (students, school staff, state employees, courts), and what it does NOT do.
+3. Quote the exact language of Education Code 37220.7(e) (school exercises and the model curriculum guide) and Section 1(e) (the stated purposes of the act).
+4. Then ask me what I want to know, and answer my questions using only the bill text, citing the section number for each answer. If something is not in the text, say so plainly.</template>
+    </section>
 
     <section class="tldr" id="summary" aria-labelledby="summary-h">
       <h2 id="summary-h">What AB 2017 does, in plain language</h2>
@@ -644,9 +680,32 @@
       <h2>The bill is on the Governor’s desk</h2>
       <p>Only Governor Newsom can stop AB 2017 now, and he must act by September 30, 2026. Our home page writes a veto request in about two minutes and points you to his official phone line and contact form. Free, no sign-up, nothing you type leaves your browser.</p>
       <a class="btn" href="/#take-action">Ask Governor Newsom for a veto</a>
+      <a class="btn secondary" id="ask-chatgpt-bottom" href="https://chatgpt.com/" target="_blank" rel="noopener">Ask ChatGPT about the bill &#8599;</a>
     </div>
   </article>
 </div>
+
+<script>
+  // "Ask ChatGPT / Claude / Perplexity" — prefill each assistant with the prompt in #ask-prompt.
+  // The prompt points the assistant at the Markdown twin of this page (13k words is far
+  // beyond what fits in a URL, so the assistant fetches it; our robots.txt allows ChatGPT-User).
+  (function () {
+    var tpl = document.getElementById('ask-prompt');
+    if (!tpl) return;
+    var prompt = (tpl.content ? tpl.content.textContent : tpl.innerHTML).trim();
+    var q = encodeURIComponent(prompt);
+    var targets = {
+      'ask-chatgpt': 'https://chatgpt.com/?q=' + q,
+      'ask-chatgpt-bottom': 'https://chatgpt.com/?q=' + q,
+      'ask-claude': 'https://claude.ai/new?q=' + q,
+      'ask-perplexity': 'https://www.perplexity.ai/search?q=' + q
+    };
+    Object.keys(targets).forEach(function (id) {
+      var a = document.getElementById(id);
+      if (a) a.setAttribute('href', targets[id]);
+    });
+  })();
+</script>
 
 <footer>
   <p><a href="/">Home</a> &middot; <a href="/#bill-status">Bill status</a> &middot; <a href="/#final-text">What it does</a> &middot; <a href="/ab-2017-bill-text.md">Markdown version</a> &middot; <a href="/llms.txt">llms.txt</a></p>
