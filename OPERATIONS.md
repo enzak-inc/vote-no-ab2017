@@ -17,8 +17,21 @@ All phase-specific copy, targets, deadlines, timeline entries, and letter text l
 1. Edit `campaign.js` → set `phase:` to one of `committee`, `floor`, `senate`, `governor`, `signed`, `vetoed`.
 2. Update that phase's `statusNarrative`, `countdown`, `share`, and (for `signed` / `vetoed`) the `outcome` block. Search for `UPDATE:` markers.
 3. Add timeline entries to `timeline:` (newest at the bottom). Use `kind: 'now'` for the current state and `phases: [...]` to limit an entry to some phases.
-4. Preview before deploying: `http://localhost:8080/?phase=signed` (any phase key). Add `&debug=1` for console logs tagged `[PHASE] [LOOKUP] [LETTER] [COUNTER] [SHARE]`.
-5. Bump `<lastmod>` in `sitemap.xml`, update `llms.txt` / `llms-full.txt` status lines, regenerate `og.jpg` if the headline changed.
+4. **Run `npm run render`.** This bakes the phase into `index.html` (status pill, countdown label, timeline, red flags, hidden components) so crawlers that do not run JavaScript (GPTBot, ClaudeBot, PerplexityBot, ChatGPT-User) see the current content. The browser JS re-applies the same values, so it is safe to run any time. Commit the result.
+5. Preview before deploying: `http://localhost:8080/?phase=signed` (any phase key). Add `&debug=1` for console logs tagged `[PHASE] [LOOKUP] [LETTER] [COUNTER] [SHARE]`.
+6. Bump `<lastmod>` in `sitemap.xml`, update `llms.txt` / `llms-full.txt` status lines, regenerate `og.jpg` if the headline changed.
+
+## Full bill text page (`/ab-2017-full-text/`)
+
+- `ab-2017-full-text/index.html` and the Markdown twin `ab-2017-full-text.md` are generated from the official text on leginfo.legislature.ca.gov (bill_id `202520260AB2017`).
+- To refresh after a new amendment or chaptering: save the leginfo bill-text page HTML, run the converter (`bill_to_html.py` then `assemble_fulltext.py`, kept in the session scratchpad; copy them into `scripts/` if this becomes routine), update the "This version" meta line, the "What changed" section, and `lastmod` in `sitemap.xml`.
+- The `.md` file is served as `text/markdown` via `_headers`.
+
+## SEO checks
+
+- `npm run pagespeed` — Core Web Vitals via Google PageSpeed Insights for `/` (add paths as extra args, e.g. `npm run pagespeed -- https://vote-no-ab2017.com / /ab-2017-full-text/`).
+- OG images: `og.jpg` + `og-4x3.jpg` + `og-square.jpg` (home) and `og-full-text*.jpg` (bill page) are referenced in the JSON-LD `image` arrays. Regenerate with the `make_og_set.py` recipe (Pillow + Playfair/Inter TTFs) when the headline changes.
+- Google Search Console: the site is not yet a verified property on the enzak account. Add it (DNS TXT via Cloudflare) and submit `https://vote-no-ab2017.com/sitemap.xml`.
 
 To reuse the site for a different bill: change `bill:`, `governor:`, `timeline:`, `stages:`, `provisions:`, `redFlags:`, `letters:`, and `polishPrompt:` in `campaign.js`; update the static copy in `index.html` (title, meta, About section, JSON-LD, FAQ); update the rosters if the session changed.
 

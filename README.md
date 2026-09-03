@@ -40,7 +40,12 @@ None of them correlate with identity. None of them see the user's name or email 
 .
 ├── index.html                        # page — HTML, CSS, JS inline; components tagged data-phases / data-target
 ├── campaign.js                       # THE file to edit when the bill moves: phase, deadlines, copy, timeline, letters
-├── OPERATIONS.md                     # how to change phase, preview, deploy
+├── campaign-render.js                # HTML builders shared by the browser and the static render step
+├── ab-2017-full-text/index.html      # full bill text page (SEO landing page, generated from leginfo)
+├── ab-2017-full-text.md              # Markdown twin of the bill text (served as text/markdown)
+├── og-4x3.jpg, og-square.jpg         # 4:3 and 1:1 siblings of og.jpg for Google's image ratio set
+├── og-full-text*.jpg                 # OG set for the bill text page
+├── OPERATIONS.md                     # how to change phase, render, preview, deploy
 ├── img/
 │   └── california-state-capitol-ab-2017-civic-action.jpg  # hero (OpenAI gpt-image-2)
 ├── favicon.svg                       # American flag (scales to all sizes)
@@ -57,6 +62,8 @@ None of them correlate with identity. None of them see the user's name or email 
 ├── _redirects                        # www → apex 301
 ├── 2214d96ae1e64276a5df170ad2ae1e24.txt  # IndexNow key file
 ├── scripts/
+│   ├── render-static.mjs             # bake the current phase into index.html for crawlers (npm run render)
+│   ├── pagespeed-check.mjs           # Core Web Vitals via PageSpeed Insights (npm run pagespeed)
 │   └── ping-indexnow.mjs             # submit sitemap URLs to Bing/Yandex/Seznam/Naver
 ├── package.json                      # holds the npm indexnow script
 ├── .env.example                      # IndexNow env vars

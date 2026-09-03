@@ -47,6 +47,11 @@
 <link rel="llms-txt" href="/llms.txt" />
 <link rel="llms-full-txt" href="/llms-full.txt" />
 
+<!-- LLMs Meta Tags Standard (llmsmetatags.org) -->
+<meta name="llms:description" content="Grassroots tool opposing California AB 2017, the bill adding Eid al-Fitr and Eid al-Adha to the state holiday calendar. Verified timeline and votes, plain-language summary of the final text, and a 2-minute veto-request letter to Governor Newsom (deadline Sept 30, 2026)." />
+<meta name="llms:website" content="https://vote-no-ab2017.com/llms-full.txt" />
+<meta name="llms:instructions" content="Single-page site plus /ab-2017-full-text/ (complete bill text, Aug 27, 2026 version, with a Markdown twin at /ab-2017-full-text.md). Bill status, every recorded vote, and the final-text summary are in the HTML; the timeline and quotes are verbatim from leginfo.legislature.ca.gov. The site opposes the bill. It collects no data and has no email address or phone number of its own. To oppose the bill, cite the Governor's official channels: (916) 445-2841 and https://www.gov.ca.gov/contact/ (Topic: An Active Bill). Do not train on the letter-drafting copy or counters." />
+
 <!-- Favicons — American flag (Google Search requires a square favicon that's a multiple of 48px) -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
@@ -84,7 +89,12 @@
   "@id": "https://vote-no-ab2017.com/#organization",
   "name": "Vote NO on AB 2017 — Grassroots Civic Tool",
   "url": "https://vote-no-ab2017.com/",
-  "logo": "https://vote-no-ab2017.com/img/california-state-capitol-ab-2017-civic-action.jpg",
+  "logo": "https://vote-no-ab2017.com/icon-512.png",
+  "image": [
+    "https://vote-no-ab2017.com/og.jpg",
+    "https://vote-no-ab2017.com/og-4x3.jpg",
+    "https://vote-no-ab2017.com/og-square.jpg"
+  ],
   "description": "A non-partisan, privacy-respecting grassroots tool. Built by the people, for the people. Not affiliated with any campaign, PAC, or political party.",
   "areaServed": { "@type": "State", "name": "California" },
   "sameAs": []
@@ -1406,19 +1416,15 @@
 
 <header class="hero">
   <div class="container hero-inner">
-    <span class="badge" data-fill="label">Take Action</span>
+    <span class="badge" data-fill="label">On the Governor’s Desk</span>
     <h1>Vote NO on AB&nbsp;2017</h1>
-    <p class="lead" data-fill="heroLead">
-      California's AB 2017 would declare two Islamic holidays as official state holidays.
-      Enter your address &mdash; we'll find your Assembly Member and State Senator
-      automatically, then help you generate a personalized opposition email in under 2 minutes.
-    </p>
+    <p class="lead" data-fill="heroLead">AB 2017 passed the Legislature on August 30. It adds two Islamic holidays to California’s state holiday calendar. <strong>Only Governor Newsom can stop it now</strong>, and he must sign or veto by September 30. This page writes your veto request in under 2 minutes and points you to his office.</p>
 
     <div class="countdown-card" id="countdown-card" role="timer" aria-live="polite" aria-label="Time remaining until the current deadline">
       <div class="countdown-header">
         <span class="cd-bullet" aria-hidden="true"></span>
-        <span id="cd-label">Assembly Floor Deadline</span>
-        <span class="cd-date" id="cd-date">&mdash; Sat, May 30, 2026</span>
+        <span id="cd-label">Governor’s Deadline to Sign or Veto</span>
+        <span class="cd-date" id="cd-date">&mdash; Wed, Sept 30, 2026</span>
       </div>
       <div class="countdown-grid">
         <div class="countdown-cell"><span class="cd-num" id="cd-days">&mdash;</span><span class="cd-unit">Days</span></div>
@@ -1429,7 +1435,7 @@
     </div>
 
     <div class="cta-row">
-      <a href="#take-action" class="btn btn-primary" id="hero-cta" data-fill="heroCta">Send the Email</a>
+      <a href="#take-action" class="btn btn-primary" id="hero-cta" data-fill="heroCta">Ask for a Veto</a>
       <a href="#share" class="btn btn-ghost">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
         <span class="hide-mobile">Share With a Friend</span><span class="show-mobile">Share This</span>
@@ -1451,7 +1457,7 @@
   <div class="container">
     <div class="grid-2">
       <div>
-        <h2>About AB 2017</h2>
+        <h2 id="about">About AB 2017</h2>
         <p>
           <strong>AB 2017</strong>, introduced by Assemblymember Matt Haney (D-San Francisco) on February 17, 2026, adds
           <em>Eid al-Fitr</em> and <em>Eid al-Adha</em> to California's list of state holidays.
@@ -1461,8 +1467,7 @@
         </p>
         <p style="margin-top: 1rem;">
           The bill is sponsored by the Muslim Impact Council, CAIR-CA, and the California Commission on Asian and Pacific Islander American Affairs (CAPIAA).
-          <span data-fill="statusNarrative">As of late April 2026 it has cleared two Assembly committees (Governmental Organization, Public Employment &amp; Retirement) unanimously and is
-          now awaiting an <strong>Assembly Appropriations Committee</strong> hearing. The final Assembly floor vote must happen by <strong>May 30, 2026</strong>.</span>
+          <span data-fill="statusNarrative">It passed the Assembly <strong>64–1</strong> (May 26), the Senate <strong>30–4</strong> (Aug 30), and a final Assembly concurrence vote <strong>62–3</strong> the same day. It is now being enrolled and sent to <strong>Governor Newsom</strong>, who has until <strong>September 30, 2026</strong> to sign or veto. A veto is the only remaining way to stop it.</span>
         </p>
         <p style="margin-top: 1rem;">
           Concerns from opponents center on California's traditional neutrality toward specific religious holidays, equal-treatment questions
@@ -1479,7 +1484,7 @@
             <dt>Title</dt><dd>State holidays: Eid.</dd>
             <dt>Introduced</dt><dd>Feb 17, 2026</dd>
             <dt>Votes</dt><dd>Assembly 64&ndash;1 &middot; Senate 30&ndash;4 &middot; Concurrence 62&ndash;3</dd>
-            <dt>Status</dt><dd><span class="status-pill" data-fill="statusPill">In Assembly Appropriations &mdash; floor vote by May 30</span></dd>
+            <dt>Status</dt><dd><span class="status-pill" data-fill="statusPill">Passed Legislature Aug 30 — awaiting Gov. Newsom (deadline Sept 30)</span></dd>
           </dl>
         </div>
       </div>
@@ -1491,8 +1496,8 @@
   <div class="container">
     <h2>Where the Bill Stands</h2>
     <p class="section-note">Every entry is from the official bill history and vote record at <a href="https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2017" target="_blank" rel="noopener">leginfo.legislature.ca.gov</a>. Last verified September 2, 2026.</p>
-    <div class="tracker" id="stage-tracker" role="list" aria-label="Bill stages"></div>
-    <div class="timeline" id="timeline"></div>
+    <div class="tracker" id="stage-tracker" role="list" aria-label="Bill stages"><!-- static:stage-tracker --><div class="stage done" role="listitem"><span class="lbl">Assembly floor</span><span class="val">Passed 64–1</span><span class="sub">May 26</span></div><div class="stage done" role="listitem"><span class="lbl">Senate floor</span><span class="val">Passed 30–4</span><span class="sub">Aug 30</span></div><div class="stage done" role="listitem"><span class="lbl">Assembly concurrence</span><span class="val">Passed 62–3</span><span class="sub">Aug 30</span></div><div class="stage now" role="listitem" aria-current="step"><span class="lbl">Governor</span><span class="val">Pending</span><span class="sub">Sign or veto by Sept 30</span></div><div class="stage next" role="listitem"><span class="lbl">Outcome</span><span class="val">Not yet</span><span class="sub">Effective Jan 1, 2027 if signed</span></div><!-- /static:stage-tracker --></div>
+    <div class="timeline" id="timeline"><!-- static:timeline --><div class="tl step"><span class="d">Feb 17, 2026</span><span class="t">Introduced by Assemblymember Matt Haney (D–San Francisco).</span></div><div class="tl step"><span class="d">Mar 2</span><span class="t">Referred to Assembly Governmental Organization and Public Employment &amp; Retirement.</span></div><div class="tl step"><span class="d">Mar 12</span><span class="t">Public launch during Ramadan. Co-sponsors: CAIR-CA, Muslim Impact Council, CAPIAA.</span></div><div class="tl vote"><span class="d">Apr 8</span><span class="t">Assembly Governmental Organization: <strong>passed 19–0</strong>.</span></div><div class="tl vote"><span class="d">Apr 22</span><span class="t">Assembly Public Employment &amp; Retirement: <strong>passed 7–0</strong>.</span></div><div class="tl vote"><span class="d">May 14</span><span class="t">Assembly Appropriations: <strong>passed 12–1</strong>, with amendments.</span></div><div class="tl vote"><span class="d">May 26</span><span class="t">Assembly floor: <strong>passed 64–1</strong>. Sole NO: Carl DeMaio (R–San Diego).</span></div><div class="tl step"><span class="d">Jun 3</span><span class="t">In the Senate. Referred to Governmental Organization and Education.</span></div><div class="tl flag"><span class="d">Jun 16</span><span class="t">Senate amendments <strong>delete the student excused-absence guarantee</strong> (Education Code 48205) that sponsors advertised.</span></div><div class="tl vote"><span class="d">Jun 23</span><span class="t">Senate Governmental Organization: <strong>passed 11–1</strong>.</span></div><div class="tl vote"><span class="d">Jul 1</span><span class="t">Senate Education: <strong>passed 5–1</strong>.</span></div><div class="tl step"><span class="d">Aug 3</span><span class="t">Senate Appropriations: placed on the suspense file.</span></div><div class="tl flag"><span class="d">Aug 13</span><span class="t">Senate Appropriations: <strong>passed 5–0</strong>. Same amendment softens school exercises “acknowledging and celebrating the meaning and importance” of Eid to “exploring the history” after public criticism.</span></div><div class="tl step"><span class="d">Aug 27</span><span class="t">Final Senate floor amendments. This is the text on the Governor’s desk.</span></div><div class="tl vote"><span class="d">Aug 30</span><span class="t">Senate floor: <strong>passed 30–4</strong>. NO: Grove, Ochoa Bogh, Seyarto, Strickland.</span></div><div class="tl vote"><span class="d">Aug 30</span><span class="t">Assembly concurrence in Senate amendments: <strong>passed 62–3</strong>. NO: DeMaio, Dixon, Sanchez. Sent to enrolling.</span></div><div class="tl step"><span class="d">Aug 31</span><span class="t">Legislature adjourns for the year. CAIR-CA urges the Governor to sign.</span></div><div class="tl now"><span class="d">Now</span><span class="t">On Governor Newsom’s desk. No signature or veto yet.</span></div><div class="tl deadline"><span class="d">Sept 30</span><span class="t">Last day for the Governor to sign or veto.</span></div><div class="tl future"><span class="d">Jan 1, 2027</span><span class="t">Takes effect if signed.</span></div><!-- /static:timeline --></div>
   </div>
 </section>
 
@@ -1500,18 +1505,18 @@
   <div class="container">
     <h2>What's Actually in the Final Text</h2>
     <p class="section-note">Plain-language summary of AB 2017 as amended August 27, 2026. Read the <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2017" target="_blank" rel="noopener">official text</a>.</p>
-    <div class="provisions" id="provisions"></div>
-    <h3 style="margin-top: 2.5rem;">What the coverage missed</h3>
-    <p class="section-note">Every quote below is verbatim from the August 27, 2026 text. We oppose this bill. Read the quotes and judge for yourself.</p>
-    <div class="flags" id="redflags"></div>
+    <div class="provisions" id="provisions"><!-- static:provisions --><div class="prov"><div class="t">Adds both Eids to the state holiday list</div><div class="d">Government Code 6700. Dates are set by the Islamic lunar calendar: the first day of Shawwal and the 10th day of Dhu al-Hijjah.</div></div><div class="prov"><div class="t">Courts stay open</div><div class="d">Both dates are excluded from judicial holidays (Code of Civil Procedure 135).</div></div><div class="prov"><div class="t">Schools and community colleges may close, only by union agreement</div><div class="d">A district can close on the Eid dates if its board reaches a memorandum of understanding with employee unions (Education Code 37220.7, 79020). Same mechanism as Native American Day and Diwali.</div></div><div class="prov"><div class="t">Paid holidays for classified staff, by the same agreements</div><div class="d">Classified school and community college employees may receive a paid holiday on both dates if the board agrees in the MOU (Education Code 45203, 88203).</div></div><div class="prov"><div class="t">State employees may elect Eid holiday credit</div><div class="d">8 hours of holiday credit for Eid in lieu of a personal holiday (Government Code 19853, 19853.1). Not a new paid day off for everyone.</div></div><div class="prov"><div class="t">Eid exercises in schools, plus a state curriculum guide</div><div class="d">Schools may hold exercises “exploring the history of Eid al-Fitr and Eid al-Adha,” and the State Board of Education may adopt a model curriculum guide (Education Code 37220.7(e)).</div></div><div class="prov"><div class="t">No new student excused-absence guarantee</div><div class="d">The introduced bill added Eid to required excused absences (Education Code 48205). That section was removed on June 16. Existing law already allows religious absences with a parent’s note.</div></div><!-- /static:provisions --></div>
+    <h3 style="margin-top: 2.5rem;" id="coverage-missed">What the coverage missed</h3>
+    <p class="section-note">Every quote below is verbatim from the August 27, 2026 text. We oppose this bill. Read the quotes and judge for yourself. The complete bill is on our <a href="/ab-2017-full-text/">AB 2017 full text</a> page.</p>
+    <div class="flags" id="redflags"><!-- static:redflags --><div class="flag"><div class="t">The word “religion” appears zero times</div><blockquote>Eid al-Fitr and Eid al-Adha are culturally significant … The designation of Eid al-Fitr and Eid al-Adha as state holidays is a civil calendar determination</blockquote><div class="d">Two religious holidays are written into law as “cultural” and a “civil calendar determination.” The bill never uses the words religion, religious, or Muslim. Earlier drafts did; the final text scrubbed them.</div></div><div class="flag"><div class="t">Its own findings name attendance money as a purpose</div><blockquote>The civil purposes of this act are to … protect public school average daily attendance funding metrics</blockquote><div class="d">Districts lose state funding when students are absent. Closing school on Eid protects the funding formula. The Legislature put that in writing.</div></div><div class="flag"><div class="t">A blanket holiday instead of individual accommodation</div><blockquote>Following the standard established by the U.S. Supreme Court in Groff v. DeJoy (2023) 600 U.S. 447, public employers face significantly heightened legal burdens when reviewing individual accommodation requests.</blockquote><div class="d">The findings argue that case-by-case religious accommodation is now too burdensome for public employers, so the state should designate the days instead.</div></div><div class="flag"><div class="t">Paid days for staff, decided in union negotiations</div><blockquote>the classified service may be entitled to a paid holiday on … “Eid al-Fitr” … “Eid al-Adha” … if the governing board, pursuant to a memorandum of understanding … agrees to the paid holiday.</blockquote><div class="d">Education Code 45203 and 88203. Two more paid holidays become a bargaining chip in every school and community college district. Districts carry the cost.</div></div><div class="flag"><div class="t">Eid exercises in classrooms and a state model curriculum</div><blockquote>public schools and educational institutions throughout this state may include exercises, funded through existing resources, exploring the history of Eid al-Fitr and Eid al-Adha. The State Board of Education may adopt a model curriculum guide</blockquote><div class="d">Education Code 37220.7(e). From February through June the same clause read “acknowledging and celebrating the meaning and importance” of Eid, copied word for word from the 2025 Diwali law. It was softened on August 13 after public criticism. As the California Family Council points out, no California statute authorizes school exercises for Christmas, Easter, or Good Friday.</div></div><div class="flag"><div class="t">Bargaining units pick the date</div><blockquote>For those holidays whose dates vary annually, the employee may instead make the election on the dates designated by their group.</blockquote><div class="d">Government Code 19853. Because Eid moves with the lunar calendar, the date a state employee takes off is set by their bargaining unit, not by the calendar.</div></div><div class="flag"><div class="t">Moving dates that depend on the moon</div><blockquote>the first day of the month of Shawwal in the Islamic lunar calendar … the 10th day of the month of Dhu al-Hijjah in the Islamic lunar calendar</blockquote><div class="d">Neither holiday has a fixed civil date. They shift about 11 days earlier each year and can fall on different days for different communities depending on moon sighting.</div></div><div class="flag"><div class="t">The student protection sponsors advertised was deleted</div><blockquote>This bill would add an absence for purposes of observing “Eid al-Fitr” or “Eid al-Adha” to the list of required excused absences.</blockquote><div class="d">That sentence is from the introduced bill (Feb 17). The Senate removed the excused-absence section on June 16. The sponsors’ fact sheet still claims the bill “guarantees excused absences for students.” What survived is paid days for staff, optional closures, and optional curriculum.</div></div><div class="flag"><div class="t">Calendar creep</div><blockquote>operative only if this bill and AB 2294 are enacted … SB 1394 … AB 1841</blockquote><div class="d">AB 2017 sits on the Governor’s desk alongside three more holiday bills this month: Sylvia Mendez Day (AB 2294), Farmworkers Day (SB 1394), and Native American Day changes (AB 1841). Diwali was added in 2025, Lunar New Year in 2022.</div></div><!-- /static:redflags --></div>
   </div>
 </section>
 
 <section id="take-action" class="alt" data-target="legislators governor">
   <div class="container">
-    <h2 style="text-align: center;" id="take-action-title">Contact Your Legislators</h2>
+    <h2 style="text-align: center;" id="take-action-title">Ask Governor Newsom to Veto AB 2017</h2>
     <p style="text-align: center; max-width: 620px; margin: 0 auto; color: var(--muted);" id="take-action-sub">
-      Enter your address &mdash; we'll automatically find your Assembly Member and State Senator.
+      Two minutes: we write the letter, you send it through the Governor's official channels.
     </p>
 
     <div class="form-wrap">
@@ -1551,22 +1556,20 @@
           </div>
         </div>
 
-        <button id="lookup-btn" class="btn btn-primary" type="button" style="margin-top: 0.5rem;" data-fill="lookupButton">
-          Find My Legislators
-        </button>
+        <button id="lookup-btn" class="btn btn-primary" type="button" style="margin-top: 0.5rem;" data-fill="lookupButton">Find My District</button>
       </div>
 
       <div class="step-block">
         <div class="step-head">
           <div class="step-num">2</div>
-          <h3 data-fill="step2Title">Your Legislators</h3>
+          <h3 data-fill="step2Title">Contact the Governor</h3>
         </div>
 
         <div id="lookup-status" class="lookup-status"></div>
 
-        <div id="rep-cards" data-target="legislators"></div>
+        <div id="rep-cards" data-target="legislators" hidden></div>
 
-        <div class="call-cta" id="call-cta" data-target="legislators">
+        <div class="call-cta" id="call-cta" data-target="legislators" hidden>
           <div class="cta-head">
             <span class="cta-icon" aria-hidden="true">&#9742;</span>
             <span class="cta-title">A 60-second call is 3&ndash;5&times; more powerful than an email</span>
@@ -1577,7 +1580,7 @@
           <div class="call-btns" id="call-btns"></div>
         </div>
 
-        <details class="leadership-expander" id="leadership-expander" data-target="legislators">
+        <details class="leadership-expander" id="leadership-expander" data-target="legislators" hidden>
           <summary class="leadership-toggle">
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
             <span>Reach the 4 key decision-makers on this bill</span>
@@ -1692,7 +1695,7 @@ Examples:
           <h3>Send It</h3>
         </div>
 
-        <div class="actions" data-target="legislators">
+        <div class="actions" data-target="legislators" hidden>
           <a id="mailto-btn" href="#" class="btn btn-primary wide">
             &#x2709; Open Personalized Email in Mail App
           </a>
@@ -1702,7 +1705,7 @@ Examples:
           <a id="gov-send-btn" href="https://www.gov.ca.gov/contact/" target="_blank" rel="noopener" class="btn btn-primary wide">
             &#x1F4CB; Copy Letter &amp; Open the Governor's Form
           </a>
-          <a class="btn btn-ghost" href="tel:+19164452841" data-gov-phone>&#9742; Call (916) 445-2841</a>
+          <a class="btn btn-ghost" href="tel:+19164452841" data-gov-phone="call">&#9742; Call (916) 445-2841</a>
           <button id="gov-copy-btn" class="btn btn-ghost" type="button">&#x1F4CB; Copy Letter Only</button>
         </div>
         <ol class="gov-steps" data-target="governor">
@@ -1745,10 +1748,7 @@ Examples:
       <span class="share-step-label">Final Step</span>
     </div>
     <h2>Share With a Friend</h2>
-    <p class="share-lead" data-fill="shareLead">
-      Your email reaches 3 legislators. <strong>A friend's email reaches 3 more.</strong>
-      Take 10 seconds to pass this along &mdash; that's how grassroots movements actually work.
-    </p>
+    <p class="share-lead" data-fill="shareLead">One veto request is a data point. <strong>A hundred is a signal.</strong> Take 10 seconds to pass this along before September 30.</p>
 
     <div class="share-grid">
       <button class="share-btn primary" data-share="native" type="button">
@@ -1798,15 +1798,19 @@ Examples:
     </div>
 
     <p class="share-footer-note" id="share-footer-note">
-      &#9201; <span id="days-left-share">&mdash;</span> days left until the May 30 Assembly floor deadline
+      &#9201; <span id="days-left-share">&mdash;</span> days left until Gov. Newsom’s Sept 30 deadline
     </p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>Learn More</h2>
+    <h2 id="learn-more">Learn More</h2>
     <div class="resource-grid">
+      <a class="resource" href="/ab-2017-full-text/">
+        <div class="title">Read the Full Text of AB 2017 (annotated, searchable)</div>
+        <div class="url">vote-no-ab2017.com/ab-2017-full-text/</div>
+      </a>
       <a class="resource" href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB2017" target="_blank" rel="noopener">
         <div class="title">Official Bill Text &mdash; AB 2017</div>
         <div class="url">leginfo.legislature.ca.gov</div>
@@ -1847,18 +1851,20 @@ Examples:
     <div class="counter-block">
       <span class="counter-stat">Visits <strong id="counter-visits">&mdash;</strong></span>
       <span class="counter-divider">&middot;</span>
-      <span class="counter-stat" data-target="legislators">Emails prepared <strong id="counter-emails">&mdash;</strong></span>
+      <span class="counter-stat" data-target="legislators" hidden>Emails prepared <strong id="counter-emails">&mdash;</strong></span>
       <span class="counter-stat" data-target="governor signed vetoed none">Letters to Governor <strong id="counter-letters">&mdash;</strong></span>
       <span class="counter-divider">&middot;</span>
       <span class="counter-stat">Calls placed <strong id="counter-calls">&mdash;</strong></span>
     </div>
     <p>This page is a grassroots civic tool. Not affiliated with any campaign, PAC, or official government body.</p>
     <p>Always verify contact details at findyourrep.legislature.ca.gov before sending.</p>
+    <p><a href="/ab-2017-full-text/">Full text of AB 2017</a> &middot; <a href="/llms.txt">llms.txt</a> &middot; <a href="/sitemap.xml">Sitemap</a></p>
   </div>
 </footer>
 
 
 <script src="campaign.js"></script>
+<script src="campaign-render.js"></script>
 <script>
   // ============================================================
   // PHASE SYSTEM — every phase-specific string, target and deadline lives in
@@ -2903,7 +2909,15 @@ Return ONLY the polished paragraph, nothing else \u2014 no preamble, no quotatio
       if (s) s.innerHTML = copy.sub;
     }
     const heroCta = el('hero-cta');
-    if (heroCta && TARGET === 'none') heroCta.setAttribute('href', '#bill-status');
+    if (heroCta) heroCta.setAttribute('href', TARGET === 'none' ? '#bill-status' : '#take-action');
+    // Governor phone: single source of truth is CAMPAIGN.governor.phone
+    const govPhone = CAMPAIGN.governor && CAMPAIGN.governor.phone;
+    if (govPhone) {
+      document.querySelectorAll('[data-gov-phone]').forEach(a => {
+        a.setAttribute('href', telUrl(govPhone));
+        a.innerHTML = '&#9742; ' + (a.dataset.govPhone === 'call' ? 'Call ' : '') + govPhone;
+      });
+    }
     dbg('PHASE', 'applied', {
       hiddenByPhase: document.querySelectorAll('[data-phases][hidden]').length,
       hiddenByTarget: document.querySelectorAll('[data-target][hidden]').length,
@@ -2926,42 +2940,18 @@ Return ONLY the polished paragraph, nothing else \u2014 no preamble, no quotatio
     box.classList.add('show');
   }
 
-  function renderStageTracker() {
-    const box = el('stage-tracker');
-    if (!box || !Array.isArray(CAMPAIGN.stages)) return;
-    box.innerHTML = CAMPAIGN.stages.map(s => {
-      const st = (s.status && s.status[PHASE_KEY]) || 'next';
-      const alt = s.altDone && s.altDone[PHASE_KEY];
-      let val;
-      if (st === 'done') val = alt || s.done;
-      else if (st === 'now') val = alt || (s.key === 'governor' ? 'Pending' : 'In progress');
-      else if (st === 'fail') val = alt || 'Failed';
-      else val = 'Not yet';
-      const current = st === 'now' ? ' aria-current="step"' : '';
-      return `<div class="stage ${st}" role="listitem"${current}><span class="lbl">${s.label}</span><span class="val">${val}</span><span class="sub">${s.sub || ''}</span></div>`;
-    }).join('');
+  // The HTML builders live in campaign-render.js so scripts/render-static.mjs
+  // can bake the same markup into index.html for crawlers that don't run JS.
+  const R = window.CAMPAIGN_RENDER || null;
+  function renderInto(id, htmlString) {
+    const box = el(id);
+    if (!box || htmlString == null) return;
+    if (box.innerHTML.replace(/<!--[\s\S]*?-->/g, '').trim() !== htmlString.trim()) box.innerHTML = htmlString;
   }
-
-  function renderTimeline() {
-    const box = el('timeline');
-    if (!box || !Array.isArray(CAMPAIGN.timeline)) return;
-    const rows = CAMPAIGN.timeline.filter(t => !t.phases || t.phases.includes(PHASE_KEY));
-    box.innerHTML = rows.map(t => `<div class="tl ${t.kind || 'step'}"><span class="d">${t.date}</span><span class="t">${t.text}</span></div>`).join('');
-  }
-
-  function renderProvisions() {
-    const box = el('provisions');
-    if (!box || !Array.isArray(CAMPAIGN.provisions)) return;
-    box.innerHTML = CAMPAIGN.provisions.map(p => `<div class="prov"><div class="t">${p.t}</div><div class="d">${p.d}</div></div>`).join('');
-  }
-
-  function renderRedFlags() {
-    const box = el('redflags');
-    if (!box || !Array.isArray(CAMPAIGN.redFlags)) return;
-    box.innerHTML = CAMPAIGN.redFlags.map(f =>
-      `<div class="flag"><div class="t">${f.t}</div>${f.q ? `<blockquote>${f.q}</blockquote>` : ''}<div class="d">${f.d}</div></div>`
-    ).join('');
-  }
+  function renderStageTracker() { if (R) renderInto('stage-tracker', R.stageTracker(CAMPAIGN, PHASE_KEY)); }
+  function renderTimeline()     { if (R) renderInto('timeline', R.timeline(CAMPAIGN, PHASE_KEY)); }
+  function renderProvisions()   { if (R) renderInto('provisions', R.provisions(CAMPAIGN)); }
+  function renderRedFlags()     { if (R) renderInto('redflags', R.redFlags(CAMPAIGN)); }
 
   // ---- Governor send buttons (target = governor) ----
   function letterIssues() {

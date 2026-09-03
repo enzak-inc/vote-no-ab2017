@@ -18,6 +18,13 @@ License: CC0 (public domain) — free to quote, cite, or paraphrase
 
 ---
 
+## Pages
+
+- https://vote-no-ab2017.com/ — status, timeline, what the final text does, veto-request tool
+- https://vote-no-ab2017.com/ab-2017-full-text/ — complete bill text as amended August 27, 2026 (Legislative Counsel's Digest, all 30 sections with stable ids #sec-1 … #sec-17, what changed between versions, FAQ). Markdown: https://vote-no-ab2017.com/ab-2017-full-text.md
+
+---
+
 ## Verified Timeline (official bill history and vote record, leginfo.legislature.ca.gov)
 
 - 2026-02-17 — Introduced; read first time, to print.

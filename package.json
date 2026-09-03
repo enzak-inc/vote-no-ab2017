@@ -5,6 +5,8 @@
   "description": "Grassroots civic tool to contact California legislators about AB 2017.",
   "type": "module",
   "scripts": {
+    "render": "node scripts/render-static.mjs",
+    "pagespeed": "node scripts/pagespeed-check.mjs",
     "indexnow": "node scripts/ping-indexnow.mjs",
     "serve": "python3 -m http.server 8080"
   },
