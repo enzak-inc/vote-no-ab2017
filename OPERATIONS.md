@@ -49,7 +49,7 @@ To reuse the site for a different bill: change `bill:`, `governor:`, `timeline:`
   ```
 
   `git archive` keeps `.git`, `.claude/`, `.playwright-mcp/` and other untracked files out of the upload. Commit first; the upload is live on vote-no-ab2017.com within about a minute. There is no staging environment; preview locally first.
-- `_headers` (CSP, HSTS, Content-Signal) and `_redirects` (www → apex) are applied automatically by Pages.
+- `_headers` (CSP, HSTS, Content-Signal) is applied automatically by Pages. The `_redirects` file is kept for reference but Pages cannot redirect across hosts; the **www → apex 301 is a Cloudflare Single Redirect rule on the zone** (zone `1712ea75138b94487b5efd08bcbc527b`, rule "www -> apex 301", phase `http_request_dynamic_redirect`, added 2026-09-02). Manage it in Cloudflare → Rules → Redirect Rules or via the API.
 - Cloudflare "Email Address Obfuscation" is ON for the zone: it rewrites `mailto:` links and injects `/cdn-cgi/scripts/.../email-decode.min.js`. Harmless under the current CSP (`script-src 'self'`). Turn it off in Cloudflare → Scrape Shield if it ever breaks a mailto link.
 
 After a content change:
