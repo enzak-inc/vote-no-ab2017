@@ -38,17 +38,19 @@
       .join('');
   }
 
+  // Each provision / red flag gets its own <h4 id> so AI retrieval chunks it as a
+  // self-contained passage (heading text is embedded with the chunk).
   function provisions(campaign) {
     if (!Array.isArray(campaign.provisions)) return '';
-    return campaign.provisions.map(function (p) {
-      return '<div class="prov"><div class="t">' + p.t + '</div><div class="d">' + p.d + '</div></div>';
+    return campaign.provisions.map(function (p, i) {
+      return '<div class="prov"><h4 class="t" id="provision-' + (i + 1) + '">' + p.t + '</h4><div class="d">' + p.d + '</div></div>';
     }).join('');
   }
 
   function redFlags(campaign) {
     if (!Array.isArray(campaign.redFlags)) return '';
-    return campaign.redFlags.map(function (f) {
-      return '<div class="flag"><div class="t">' + f.t + '</div>' + (f.q ? '<blockquote>' + f.q + '</blockquote>' : '') + '<div class="d">' + f.d + '</div></div>';
+    return campaign.redFlags.map(function (f, i) {
+      return '<div class="flag"><h4 class="t" id="flag-' + (i + 1) + '">' + f.t + '</h4>' + (f.q ? '<blockquote>' + f.q + '</blockquote>' : '') + '<div class="d">' + f.d + '</div></div>';
     }).join('');
   }
 
