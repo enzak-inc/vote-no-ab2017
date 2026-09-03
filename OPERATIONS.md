@@ -30,6 +30,7 @@ All phase-specific copy, targets, deadlines, timeline entries, and letter text l
 ## SEO checks
 
 - `npm run pagespeed` — Core Web Vitals via Google PageSpeed Insights for `/` (add paths as extra args, e.g. `npm run pagespeed -- https://vote-no-ab2017.com / /ab-2017-bill-text/`).
+- Performance: hero photo is served as WebP (`img/hero-1600/1000/640.webp`, 25–119 KB) with a 181 KB JPEG fallback; the 2.4 MB source JPEG stays in `img/` only as the source for the OG generator. Fonts are self-hosted variable woff2 files in `fonts/` (Playfair Display 700–800, Inter 400–800, latin subset) with `font-display: swap`; nothing third-party is on the critical path. Lighthouse mobile went from 67 (LCP 15.0 s, 2.6 MB) to the high 80s/90s (LCP under 2.5 s, under 300 KB).
 - OG images: `og.jpg` + `og-4x3.jpg` + `og-square.jpg` (home) and `og-full-text*.jpg` (bill page) are referenced in the JSON-LD `image` arrays. Regenerate with the `make_og_set.py` recipe (Pillow + Playfair/Inter TTFs) when the headline changes.
 - Google Search Console: the site is not yet a verified property on the enzak account. Add it (DNS TXT via Cloudflare) and submit `https://vote-no-ab2017.com/sitemap.xml`.
 
