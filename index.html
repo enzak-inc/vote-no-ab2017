@@ -61,6 +61,11 @@
 <!-- Sitemap for crawlers that look at <head> -->
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+<!-- Hero image preload (LCP) — CSS background images are discovered late without this -->
+<link rel="preload" as="image" type="image/webp" href="/img/hero-1600.webp" media="(min-width: 701px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/webp" href="/img/hero-1000.webp" media="(min-width: 421px) and (max-width: 700px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/webp" href="/img/hero-640.webp" media="(max-width: 420px)" fetchpriority="high" />
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -110,7 +115,7 @@
   "name": "Vote NO on California AB 2017 — Eid State Holiday Bill",
   "description": "California AB 2017 (the Eid state-holiday bill) passed the Legislature on August 30, 2026 and awaits Governor Newsom's signature or veto by September 30. Send a personalized veto request in 2 minutes. Free, no tracking, no accounts.",
   "isPartOf": { "@id": "https://vote-no-ab2017.com/#website" },
-  "primaryImageOfPage": "https://vote-no-ab2017.com/img/california-state-capitol-ab-2017-civic-action.jpg",
+  "primaryImageOfPage": "https://vote-no-ab2017.com/og.jpg",
   "about": { "@id": "https://vote-no-ab2017.com/#bill" },
   "inLanguage": "en-US"
 }
@@ -275,10 +280,28 @@
   .hero::before {
     content: "";
     position: absolute; inset: 0;
+    /* Hero photo: WebP variants (25–119 KB) instead of the 2.4 MB source JPEG — this was the mobile LCP. */
     background:
       linear-gradient(135deg, rgba(11,37,69,0.82) 0%, rgba(127,29,29,0.72) 100%),
-      url('img/california-state-capitol-ab-2017-civic-action.jpg') center/cover;
+      url('img/hero-1600.jpg') center/cover;
+    background:
+      linear-gradient(135deg, rgba(11,37,69,0.82) 0%, rgba(127,29,29,0.72) 100%),
+      image-set(url('img/hero-1600.webp') type('image/webp'), url('img/hero-1600.jpg') type('image/jpeg')) center/cover;
     z-index: -1;
+  }
+  @media (max-width: 700px) {
+    .hero::before {
+      background:
+        linear-gradient(135deg, rgba(11,37,69,0.82) 0%, rgba(127,29,29,0.72) 100%),
+        image-set(url('img/hero-1000.webp') type('image/webp'), url('img/hero-1600.jpg') type('image/jpeg')) center/cover;
+    }
+  }
+  @media (max-width: 420px) {
+    .hero::before {
+      background:
+        linear-gradient(135deg, rgba(11,37,69,0.82) 0%, rgba(127,29,29,0.72) 100%),
+        image-set(url('img/hero-640.webp') type('image/webp'), url('img/hero-1600.jpg') type('image/jpeg')) center/cover;
+    }
   }
   .hero-inner { padding-top: 5.5rem; padding-bottom: 4.5rem; width: 100%; }
   .hero h1 { color: white; margin-bottom: 1.25rem; }
