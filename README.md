@@ -74,6 +74,10 @@ None of them correlate with identity. None of them see the user's name or email 
 
 ## Deployment — Cloudflare Pages
 
+> **Current reality (Sept 2026):** the Pages project is *not* connected to GitHub. Deploys are direct uploads
+> with `wrangler pages deploy` from a `git archive` export — see `OPERATIONS.md`. The GitHub-connect steps
+> below describe the alternative setup if you ever want push-to-deploy.
+
 This site is designed for **Cloudflare Pages**. Steps:
 
 ### 1. Connect the GitHub repo

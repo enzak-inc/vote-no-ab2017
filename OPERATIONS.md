@@ -38,8 +38,17 @@ To reuse the site for a different bill: change `bill:`, `governor:`, `timeline:`
 
 ## Deploy (Cloudflare Pages)
 
-- Project: `vote-no-ab2017` (Cloudflare account `a12a9cc268038a4a78487bf60d453182`). Build command: none. Output directory: `/`.
-- **Push to `main` → Cloudflare Pages auto-deploys** in about 30 seconds. There is no staging environment; preview locally first.
+- Project: `vote-no-ab2017` (Cloudflare account `a12a9cc268038a4a78487bf60d453182`). **Not connected to GitHub** — every deployment so far is a direct upload (`ad_hoc`). Pushing to `main` does NOT deploy anything.
+- **Deploy = direct upload with wrangler from a clean export of the committed tree:**
+
+  ```bash
+  source ~/.claude/skills/cloudflare/credentials/cloudflare.env   # CF_EMAIL / CF_KEY / CF_ACCOUNT_ID
+  rm -rf /tmp/vno-deploy && mkdir -p /tmp/vno-deploy && git archive HEAD | tar -x -C /tmp/vno-deploy
+  CLOUDFLARE_EMAIL="$CF_EMAIL" CLOUDFLARE_API_KEY="$CF_KEY" CLOUDFLARE_ACCOUNT_ID="$CF_ACCOUNT_ID" \
+    npx wrangler pages deploy /tmp/vno-deploy --project-name vote-no-ab2017 --branch main
+  ```
+
+  `git archive` keeps `.git`, `.claude/`, `.playwright-mcp/` and other untracked files out of the upload. Commit first; the upload is live on vote-no-ab2017.com within about a minute. There is no staging environment; preview locally first.
 - `_headers` (CSP, HSTS, Content-Signal) and `_redirects` (www → apex) are applied automatically by Pages.
 - Cloudflare "Email Address Obfuscation" is ON for the zone: it rewrites `mailto:` links and injects `/cdn-cgi/scripts/.../email-decode.min.js`. Harmless under the current CSP (`script-src 'self'`). Turn it off in Cloudflare → Scrape Shield if it ever breaks a mailto link.
 
