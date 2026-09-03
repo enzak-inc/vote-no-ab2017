@@ -38,7 +38,9 @@ None of them correlate with identity. None of them see the user's name or email 
 
 ```
 .
-├── index.html                        # everything — HTML, CSS, JS all inline
+├── index.html                        # page — HTML, CSS, JS inline; components tagged data-phases / data-target
+├── campaign.js                       # THE file to edit when the bill moves: phase, deadlines, copy, timeline, letters
+├── OPERATIONS.md                     # how to change phase, preview, deploy
 ├── img/
 │   └── california-state-capitol-ab-2017-civic-action.jpg  # hero (OpenAI gpt-image-2)
 ├── favicon.svg                       # American flag (scales to all sizes)
@@ -137,6 +139,23 @@ npm run serve   # starts python -m http.server on 8080
 ```
 
 No build step. Edit `index.html` directly.
+
+---
+
+## Phases — reusing the site as the bill moves
+
+The page is phase-driven. `campaign.js` holds one entry per stage of a bill's life
+(`committee`, `floor`, `senate`, `governor`, `signed`, `vetoed`). Changing `phase:` there
+switches the hero badge, countdown, status pill, status narrative, share copy, the action
+target, and the letter template. Nothing is deleted between phases:
+
+- `data-phases="signed vetoed"` — element shows only in those phases (e.g. the outcome banner).
+- `data-target="legislators"` / `"governor"` — element shows only when the phase's `target` matches
+  (rep cards, call buttons, and the leadership expander vs. the Governor contact block and buttons).
+- `data-fill="statusPill"` — element text is replaced from the phase config.
+
+Preview any phase without editing: `?phase=signed`. Console logging: `?debug=1`.
+See `OPERATIONS.md` for the step-by-step.
 
 ---
 
