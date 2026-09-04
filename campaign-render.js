@@ -43,7 +43,7 @@
   function provisions(campaign) {
     if (!Array.isArray(campaign.provisions)) return '';
     return campaign.provisions.map(function (p, i) {
-      return '<div class="prov"><h4 class="t" id="provision-' + (i + 1) + '">' + p.t + '</h4><div class="d">' + p.d + '</div></div>';
+      return '<div class="prov"><h3 class="t" id="provision-' + (i + 1) + '">' + p.t + '</h3><div class="d">' + p.d + '</div></div>';
     }).join('');
   }
 
