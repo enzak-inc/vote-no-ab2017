@@ -15,12 +15,12 @@
      {asm} {sen} {ad} {sd} {districtLine} {days}
    ========================================================================== */
 window.CAMPAIGN = {
-  phase: 'governor',
+  phase: 'signed',
   debug: false,
 
   site: {
     url: 'https://vote-no-ab2017.com/',
-    name: 'Vote NO on AB 2017'
+    name: 'AB 2017 Eid State Holiday Law'
   },
 
   bill: {
@@ -66,7 +66,7 @@ window.CAMPAIGN = {
       shareFooter: '{days} days left until the May 30 Assembly floor deadline',
       shareLead: 'Your email reaches 3 legislators. <strong>A friend’s email reaches 3 more.</strong> Take 10 seconds to pass this along — that’s how grassroots movements actually work.',
       share: {
-        title: 'Vote NO on California AB 2017',
+        title: 'AB 2017 Eid State Holiday Law',
         short: 'California AB 2017 would make 2 Islamic holidays CA state holidays. Contact your reps in 2 min (free, no sign-up):',
         long: 'Hey — California’s AB 2017 would formally declare 2 Islamic holidays as CA state holidays. There’s a free tool that finds your state Assembly Member and Senator from your address and sends a personalized opposition email in about 2 minutes. No sign-up, no tracking. Please take a look and pass it on:'
       },
@@ -86,7 +86,7 @@ window.CAMPAIGN = {
       shareFooter: '{days} days left until the May 30 Assembly floor deadline',
       shareLead: 'Your email reaches 3 legislators. <strong>A friend’s email reaches 3 more.</strong> Take 10 seconds to pass this along — that’s how grassroots movements actually work.',
       share: {
-        title: 'Vote NO on California AB 2017',
+        title: 'AB 2017 Eid State Holiday Law',
         short: 'California AB 2017 would make 2 Islamic holidays CA state holidays. Contact your reps in 2 min (free, no sign-up):',
         long: 'Hey — California’s AB 2017 would formally declare 2 Islamic holidays as CA state holidays. There’s a free tool that finds your state Assembly Member and Senator from your address and sends a personalized opposition email in about 2 minutes. No sign-up, no tracking. Please take a look and pass it on:'
       },
@@ -106,7 +106,7 @@ window.CAMPAIGN = {
       shareFooter: '{days} days left until the Aug 31 Senate deadline',
       shareLead: 'Your email reaches 3 legislators. <strong>A friend’s email reaches 3 more.</strong> Take 10 seconds to pass this along — that’s how grassroots movements actually work.',
       share: {
-        title: 'Vote NO on California AB 2017',
+        title: 'AB 2017 Eid State Holiday Law',
         short: 'California AB 2017 (2 Islamic holidays as CA state holidays) passed the Assembly and is in the Senate now. Contact your reps in 2 min (free, no sign-up):',
         long: 'Hey — California’s AB 2017 passed the Assembly and is in the State Senate now. There’s a free tool that finds your State Senator and Assembly Member from your address and sends a personalized opposition email in about 2 minutes. No sign-up, no tracking. Please take a look and pass it on:'
       },
@@ -120,7 +120,7 @@ window.CAMPAIGN = {
       heroCta: 'Ask for a Veto',
       countdown: { show: true, label: 'Governor’s Deadline to Sign or Veto', dateText: 'Wed, Sept 30, 2026', iso: '2026-09-30T23:59:59-07:00', expiredText: 'Deadline passed — awaiting the Governor’s decision' },
       statusPill: 'Passed Legislature Aug 30 — awaiting Gov. Newsom (deadline Sept 30)',
-      statusNarrative: 'It passed the Assembly <strong>64–1</strong> (May 26), the Senate <strong>30–4</strong> (Aug 30), and a final Assembly concurrence vote <strong>62–3</strong> the same day. It is now being enrolled and sent to <strong>Governor Newsom</strong>, who has until <strong>September 30, 2026</strong> to sign or veto. A veto is the only remaining way to stop it.',
+      statusNarrative: 'It passed the Assembly <strong>64–1</strong> (May 26), the Senate <strong>29–4</strong> (Aug 30), and a final Assembly concurrence vote <strong>62–3</strong> the same day. It is now being enrolled and sent to <strong>Governor Newsom</strong>, who has until <strong>September 30, 2026</strong> to sign or veto. A veto is the only remaining way to stop it.',
       step2Title: 'Contact the Governor',
       lookupButton: 'Find My District',
       shareFooter: '{days} days left until Gov. Newsom’s Sept 30 deadline',
@@ -140,7 +140,7 @@ window.CAMPAIGN = {
       heroCta: 'What Happens Now',
       countdown: { show: false },
       statusPill: 'Signed into law — effective Jan 1, 2027',
-      statusNarrative: 'Governor Newsom signed AB 2017 in September 2026 (UPDATE: add the signing date and chapter number). It takes effect <strong>January 1, 2027</strong>. Local school and community college boards decide, through union agreements, whether to close on the Eid dates; state employees may elect Eid holiday credit; the State Board of Education may adopt a model curriculum guide.',
+      statusNarrative: 'Governor Newsom signed AB 2017 on September 27, 2026, as Chapter 571, Statutes of 2026. It takes effect <strong>January 1, 2027</strong>. Local school and community college boards decide, through union agreements, whether to close on the Eid dates; state employees may elect Eid holiday credit; the State Board of Education may adopt a model curriculum guide.',
       step2Title: 'Contact the Governor',
       lookupButton: 'Find My District',
       shareFooter: 'AB 2017 was signed into law',
@@ -199,13 +199,14 @@ window.CAMPAIGN = {
     { date: 'Jul 1', kind: 'vote', text: 'Senate Education: <strong>passed 5–1</strong>.' },
     { date: 'Aug 3', kind: 'step', text: 'Senate Appropriations: placed on the suspense file.' },
     { date: 'Aug 13', kind: 'flag', text: 'Senate Appropriations: <strong>passed 5–0</strong>. Same amendment softens school exercises “acknowledging and celebrating the meaning and importance” of Eid to “exploring the history” after public criticism.' },
-    { date: 'Aug 27', kind: 'step', text: 'Final Senate floor amendments. This is the text on the Governor’s desk.' },
-    { date: 'Aug 30', kind: 'vote', text: 'Senate floor: <strong>passed 30–4</strong>. NO: Grove, Ochoa Bogh, Seyarto, Strickland.' },
+    { date: 'Aug 27', kind: 'step', text: 'Final Senate floor amendments. This is the text sent to the Governor.' },
+    { date: 'Aug 30', kind: 'vote', text: 'Senate floor: <strong>passed 29–4</strong>. NO: Grove, Ochoa Bogh, Seyarto, Strickland.' },
     { date: 'Aug 30', kind: 'vote', text: 'Assembly concurrence in Senate amendments: <strong>passed 62–3</strong>. NO: DeMaio, Dixon, Sanchez. Sent to enrolling.' },
     { date: 'Aug 31', kind: 'step', text: 'Legislature adjourns for the year. CAIR-CA urges the Governor to sign.' },
+    { date: 'Sept 10', kind: 'step', text: 'Enrolled and presented to Governor Newsom.' },
     { date: 'Now', kind: 'now', phases: ['governor'], text: 'On Governor Newsom’s desk. No signature or veto yet.' },
     { date: 'Sept 30', kind: 'deadline', phases: ['committee', 'floor', 'senate', 'governor'], text: 'Last day for the Governor to sign or veto.' },
-    { date: 'Sept 2026', kind: 'now', phases: ['signed'], text: 'Signed by Governor Newsom. (UPDATE: exact date and chapter number.)' },
+    { date: 'Sept 27, 2026', kind: 'now', phases: ['signed'], text: 'Signed by Governor Newsom. Chaptered as Chapter 571, Statutes of 2026.' },
     { date: 'Sept 2026', kind: 'now', phases: ['vetoed'], text: 'Vetoed by Governor Newsom. (UPDATE: exact date.)' },
     { date: 'Jan 1, 2027', kind: 'future', phases: ['committee', 'floor', 'senate', 'governor', 'signed'], text: 'Takes effect if signed.' }
   ],
@@ -216,9 +217,9 @@ window.CAMPAIGN = {
      ------------------------------------------------------------------------ */
   stages: [
     { key: 'assembly', label: 'Assembly floor', done: 'Passed 64–1', sub: 'May 26', status: { committee: 'now', floor: 'now', senate: 'done', governor: 'done', signed: 'done', vetoed: 'done' } },
-    { key: 'senate', label: 'Senate floor', done: 'Passed 30–4', sub: 'Aug 30', status: { committee: 'next', floor: 'next', senate: 'now', governor: 'done', signed: 'done', vetoed: 'done' } },
+    { key: 'senate', label: 'Senate floor', done: 'Passed 29–4', sub: 'Aug 30', status: { committee: 'next', floor: 'next', senate: 'now', governor: 'done', signed: 'done', vetoed: 'done' } },
     { key: 'concur', label: 'Assembly concurrence', done: 'Passed 62–3', sub: 'Aug 30', status: { committee: 'next', floor: 'next', senate: 'next', governor: 'done', signed: 'done', vetoed: 'done' } },
-    { key: 'governor', label: 'Governor', done: 'Pending', sub: 'Sign or veto by Sept 30', status: { committee: 'next', floor: 'next', senate: 'next', governor: 'now', signed: 'done', vetoed: 'fail' }, altDone: { signed: 'Signed', vetoed: 'Vetoed' } },
+    { key: 'governor', label: 'Governor', done: 'Pending', sub: 'Signed Sept 27', status: { committee: 'next', floor: 'next', senate: 'next', governor: 'now', signed: 'done', vetoed: 'fail' }, altDone: { signed: 'Signed', vetoed: 'Vetoed' } },
     { key: 'outcome', label: 'Outcome', done: 'Law or veto', sub: 'Effective Jan 1, 2027 if signed', status: { committee: 'next', floor: 'next', senate: 'next', governor: 'next', signed: 'now', vetoed: 'now' }, altDone: { signed: 'Law', vetoed: 'Dead' } }
   ],
 
@@ -317,7 +318,7 @@ window.CAMPAIGN = {
     {
       t: 'Calendar creep',
       q: 'operative only if this bill and AB 2294 are enacted … SB 1394 … AB 1841',
-      d: 'AB 2017 sits on the Governor’s desk alongside three more holiday bills this month: Sylvia Mendez Day (AB 2294), Farmworkers Day (SB 1394), and Native American Day changes (AB 1841). Diwali was added in 2025, Lunar New Year in 2022.'
+      d: 'AB 2017 was one of several holiday bills before the Governor in 2026: Sylvia Mendez Day (AB 2294), Farmworkers Day (SB 1394), and Native American Day changes (AB 1841). Diwali was added in 2025, Lunar New Year in 2022.'
     }
   ],
 

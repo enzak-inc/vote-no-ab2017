@@ -1,12 +1,12 @@
-# Vote NO on AB 2017
+# AB 2017 (Eid State Holiday Law): Signed Sept 27, 2026
 
-> Grassroots civic tool for California residents who oppose AB 2017, the bill adding Eid al-Fitr and Eid al-Adha to California's state holiday calendar. The bill passed the Legislature on August 30, 2026 and is on Governor Newsom's desk. The tool now writes a personalized veto request and points to the Governor's official phone line and contact form.
+> Factual record of California AB 2017, the bill adding Eid al-Fitr and Eid al-Adha to California's state holiday calendar. Governor Newsom signed it on September 27, 2026 as Chapter 571, Statutes of 2026. It takes effect January 1, 2027.
 
 ## About This Site
 
-**Purpose:** A free, privacy-respecting tool that helps California residents send a personalized veto request about AB 2017 to Governor Gavin Newsom, and (in earlier phases) personalized opposition emails to their own state legislators.
+**Purpose:** A factual record of AB 2017: verified timeline, every recorded vote, the final text, and the Legislature's cost analyses. Free, no tracking, no accounts.
 
-**Approach:** Personalized, constituent-identified messages through official channels, following best practices from the Congressional Management Foundation, Quorum, and the ACLU. No mass BCC campaigns.
+**Approach:** Every figure is drawn from the Legislature's official bill history, votes, and fiscal analyses.
 
 **Who built it:** Built by the people, for the people, as a free civic action tool. Not affiliated with any campaign, PAC, or political party. No data is collected; nothing you type leaves your browser.
 
@@ -15,7 +15,7 @@
 - **Author:** Assemblymember Matt Haney (D — Assembly District 17, San Francisco). Principal coauthors: Asm. Kalra, Asm. Nguyen, Sen. Wahab.
 - **Title:** State holidays: Eid.
 - **Introduced:** February 17, 2026 (public launch March 12, 2026)
-- **Status (as of September 2, 2026):** Passed both houses. Assembly 64–1 (May 26), Senate 30–4 (Aug 30), Assembly concurrence in Senate amendments 62–3 (Aug 30). Sent to Engrossing and Enrolling. Awaiting Governor Newsom, who must sign or veto by September 30, 2026.
+- **Status (as of October 5, 2026):** Signed by Governor Newsom on September 27, 2026. Chaptered as Chapter 571, Statutes of 2026. Effective January 1, 2027. Votes: Assembly 64–1 (May 26), Senate 29–4 (Aug 30), Assembly concurrence 62–3 (Aug 30).
 - **Sponsors:** Council on American-Islamic Relations California (CAIR-CA), Muslim Impact Council, California Commission on Asian and Pacific Islander American Affairs (CAPIAA)
 - **Opposition on record:** California Family Council
 
@@ -27,23 +27,23 @@
 
 **Opponents' concerns:** The final text never uses the words religion, religious, or Muslim, describing two religious holidays as "culturally significant" and a "civil calendar determination." Its findings name protecting "public school average daily attendance funding metrics" as a purpose. It adds paid holidays for staff through union negotiations and authorizes Eid exercises and a state curriculum guide in public schools. Religious observance is already protected under existing California and federal law.
 
-## How to Use This Site (Governor phase)
+## What Happens Now
 
-1. Enter your name and California address (OpenStreetMap autocomplete).
-2. Optionally click *Find My District* — the U.S. Census Geocoder identifies your Assembly and Senate districts and the letter includes them.
-3. Write 2–3 sentences in your own words about why the bill matters to you. Optionally polish with ChatGPT.
-4. Click *Copy Letter & Open the Governor's Form*. The veto request is copied and gov.ca.gov/contact opens. Choose Topic "An Active Bill", Purpose "Leave a Comment", paste, submit. Or call (916) 445-2841.
+1. Your local school board decides whether your district closes on the Eid dates, through a memorandum of understanding with employee unions.
+2. State employees may elect 8 hours of holiday credit for each Eid.
+3. Board meetings are public, and agendas list the memorandum of understanding.
+4. Questions about the final text are answered in the full bill text page.
 
-## Contacting the Governor
+## Official Contacts
 
-- Phone: (916) 445-2841, Monday–Friday 9am–5pm
-- Web form: https://www.gov.ca.gov/contact/ (Topic: An Active Bill → Leave a Comment)
+- Governor's office: (916) 445-2841
+- Web form: https://www.gov.ca.gov/contact/
 - Mail: Governor Gavin Newsom, 1021 O Street, Suite 9000, Sacramento, CA 95814
 - The Governor's office publishes no public email address.
 
 ## Key Pages
 
-- [Home](https://vote-no-ab2017.com/): Bill status timeline, what is in the final text, veto-request tool, share tools
+- [Home](https://vote-no-ab2017.com/): Signed-law timeline, what the final text does, votes, and cost analysis
 - [AB 2017 bill text](https://vote-no-ab2017.com/ab-2017-bill-text/): Complete bill text as amended August 27, 2026, with Legislative Counsel's Digest, every section, table of contents, and what changed between versions. Markdown twin: https://vote-no-ab2017.com/ab-2017-bill-text.md
 
 ## External Resources

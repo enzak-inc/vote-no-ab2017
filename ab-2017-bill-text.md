@@ -2,7 +2,7 @@
 title: "AB 2017 Bill Text — California Eid State Holiday Bill (as amended August 27, 2026)"
 canonical: https://vote-no-ab2017.com/ab-2017-bill-text/
 source: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2017
-status: Passed Legislature Aug 30, 2026; on Governor Newsom's desk; sign-or-veto deadline Sept 30, 2026
+status: Signed by Governor Newsom Sept 27, 2026; Chapter 571, Statutes of 2026; effective Jan 1, 2027
 published: 2026-09-02
 ---
 
