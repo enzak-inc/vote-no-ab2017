@@ -293,7 +293,7 @@ window.CAMPAIGN = {
     {
       t: 'The Legislature priced one paid day at $68.8 million',
       q: 'Assuming 260 unadjusted working days, the statewide cost of one day of pay for classified employees of school districts, county offices of education, charter schools, and K-12 joint powers authorities is approximately $68.8 million.',
-      d: 'Senate Appropriations Committee analysis of AB 2017, August 13, 2026. Two Eid holidays make that $137.6 million of potential K–12 payroll exposure, depending on how many districts adopt them. The Assembly analysis calls the cost pressures “unknown, but potentially significant.” See the taxpayer-cost section above.'
+      d: 'Senate Appropriations Committee analysis of AB 2017, August 13, 2026. Two Eid holidays make that $137.6 million of potential K–12 payroll exposure, depending on how many districts adopt them. Note: $17.78 billion divided by 260 days is about $68.4 million, so the analysis&rsquo;s $68.8 million implies a different day count or an adjustment that the analysis does not show here. The Assembly analysis calls the cost pressures “unknown, but potentially significant.” See the taxpayer-cost section above.'
     },
     {
       t: 'Eid exercises in classrooms and a state model curriculum',
