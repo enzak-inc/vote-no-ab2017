@@ -1,4 +1,4 @@
-# robots.txt — Vote NO on AB 2017
+# robots.txt — AB 2017 Eid State Holiday Law
 # Last updated: 2026-04-23
 
 # Default: allow everything
